@@ -7,7 +7,7 @@ export default function About() {
             {/* Left side content */}
             <div className="flex flex-col lg:w-1/2 justify-center items-center lg:items-start lg:justify-start h-fit lg:h-full">
                 <h2 className="font-bold text-4xl lg:text-8xl text-white mb-16 lg:mb-10 lg:mr-8">about</h2>
-                <ul className="text-white text-xl lg:text-3xl mb-4 lg:mb-6 text-left lg:text-left list-disc">
+                <ul className="text-white text-xl lg:text-3xl mb-4 lg:mb-6 text-left lg:text-left list-disc px-4">
                     <li className="mb-4">
                         software engineer from islamabad, pakistan
                     </li>
