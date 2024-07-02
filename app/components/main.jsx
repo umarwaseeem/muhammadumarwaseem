@@ -1,7 +1,7 @@
-import GithubIcon from './svg-icons/gihtub-icon';
-import LinkedinIcon from './svg-icons/linkedin-icon';
-import TwitterIcon from './svg-icons/twitter-icon';
-import InstagramIcon from './svg-icons/instagram-icon';
+import GithubIcon from './icons/github-icon';
+import LinkedinIcon from './icons/linkedin-icon';
+import TwitterIcon from './icons/twitter-icon';
+import InstagramIcon from './icons/instagram-icon';
 
 export default function Main() {
     return (
