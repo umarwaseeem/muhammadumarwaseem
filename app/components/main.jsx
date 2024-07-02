@@ -5,7 +5,7 @@ import InstagramIcon from './svg-icons/instagram-icon';
 
 export default function Main() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center bg-black">
+        <main className="flex h-[93vh] flex-col items-center justify-center bg-black">
             <div className="flex items-center mb-4 space-x-4">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                     <InstagramIcon className="w-8 h-8 text-red-500 hover:text-gray-400" />
@@ -20,7 +20,7 @@ export default function Main() {
                     <GithubIcon className="w-8 h-8 text-gray-200 hover:text-gray-400" />
                 </a>
             </div>
-            <h1 className="font-bold text-4xl lg:text-6xl text-white text-center mb-2">muhammad umar waseem</h1>
+            <h1 className="font-bold text-6xl lg:text-8xl text-white text-center mb-2">muhammad umar waseem</h1>
             <h2 className="px-12 text-xl lg:text-3xl text-gray-400 text-center">pakistan based full stack software and machine learning engineer</h2>
         </main>
     );

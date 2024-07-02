@@ -1,13 +1,10 @@
-import Main from "./components/main";
-import About from "./components/about";
-import Contact from "./components/contact";
+
+
+import Main from './components/Main';
+
 
 export default function Home() {
   return (
-    <>
-      <Main />
-      <About />
-      <Contact />
-    </>
+    <Main />
   );
 }
