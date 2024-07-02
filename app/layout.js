@@ -9,7 +9,7 @@ const inter = Manrope({
 
 export const metadata = {
   title: "muhammad umar waseem",
-  description: "software engineer",
+  description: "pakistan based full stack software engineer and computer science grad",
 };
 
 export default function RootLayout({ children }) {
