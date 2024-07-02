@@ -31,6 +31,11 @@ export default function Contact() {
                     <Link className="hover:underline underline-offset-8 text-xl lg:text-4xl text-gray-200" href="https://www.instagram.com/umarwaseeem/" >@umarwaseeem</Link>
                     <LinkIcon />
                 </div>
+                <div>
+                    <span className="text-blue-600 font-bold text-xl lg:text-4xl">Linkedin: </span>
+                    <Link className="hover:underline underline-offset-8 text-xl lg:text-4xl text-gray-200" href="https://www.linkedin.com/in/umarwaseem/" >@umarwaseeem</Link>
+                    <LinkIcon />
+                </div>
             </div>
         </section>
     );

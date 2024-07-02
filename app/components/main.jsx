@@ -7,16 +7,16 @@ export default function Main() {
     return (
         <main className="flex h-[94vh] flex-col items-center justify-center bg-black pb-20">
             <div className="flex items-center mb-4 space-x-4">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/umarwaseeem/" target="_blank" rel="noopener noreferrer">
                     <InstagramIcon className="w-8 h-8 text-red-500 hover:text-gray-400" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/umar_terminator" target="_blank" rel="noopener noreferrer">
                     <TwitterIcon className="w-8 h-8 text-purple-500 hover:text-gray-400" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/umarwaseem/" target="_blank" rel="noopener noreferrer">
                     <LinkedinIcon className="w-8 h-8 text-blue-500 hover:text-gray-400" />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Umar-Waseem" target="_blank" rel="noopener noreferrer">
                     <GithubIcon className="w-8 h-8 text-gray-200 hover:text-gray-400" />
                 </a>
             </div>
