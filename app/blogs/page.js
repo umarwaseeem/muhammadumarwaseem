@@ -41,9 +41,9 @@ let blogs = [
 
 export default function BlogsIntro() {
     return (
-        <section className="flex  h-[93vh] flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-evenly bg-black p-6 relative">
+        <section className="flex h-[93vh] flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-evenly bg-black p-6 relative">
             {/* Top-left heading */}
-            <h2 className="font-bold text-6xl lg:text-8xl text-white mb-8 lg:mb-0 lg:mr-8 absolute top-12 left-12">blogs</h2>
+            <h2 className="font-bold text-4xl lg:text-8xl text-white mb-8 lg:mb-0 lg:mr-8 absolute top-12 left-12">blogs</h2>
 
             {/* Bottom-right box links */}
             <div className="flex flex-col lg:flex-col items-end absolute bottom-6 right-6 space-y-4 mb-20 w-full max-w-full pl-10 lg:max-w-3xl">
@@ -52,11 +52,10 @@ export default function BlogsIntro() {
                         <div
                             className={`flex flex-col group text-white py-3 rounded-lg overflow-hidden text-right animate-slide-in w-full`}
                         >
-                            <span className="text-red-400 mr-2 text-sm">{blog.date} - {blog.time}</span>
-                            <div className="flex flex-row items-end justify-end">
-                                {/* Replace this with your actual arrow icon */}
-                                <Image src="arrow-top-left.svg" alt="arrow icon" width={30} height={30} />
-                                <span className="text-white mr-2 text-3xl lg:text-5xl py-2 relative truncate">
+                            <span className="text-red-400 mr-2 text-xs">{blog.date} - {blog.time}</span>
+                            <div className="flex flex-row items-center justify-end">
+                                <Image src="arrow-top-left.svg" alt="arrow icon" width={20} height={20} />
+                                <span className="text-white mr-2 text-lg lg:text-5xl py-2 relative truncate">
                                     {blog.title}
                                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-right"></span>
                                 </span>

@@ -3,17 +3,17 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <section className="flex lg:h-[93vh] flex-col lg:flex-row items-start justify-start lg:justify-evenly bg-black p-6">
+        <section className="flex h-[93vh] flex-col lg:flex-row items-start justify-start lg:justify-evenly bg-black p-6">
             {/* Left side content */}
             <div className="flex flex-col lg:w-1/2 justify-center items-center lg:items-start lg:justify-start h-fit lg:h-full">
-                <h2 className="font-bold text-6xl lg:text-8xl text-white mb-16 lg:mb-10 lg:mr-8">about</h2>
-                <ul className="text-white text-2xl lg:text-3xl mb-4 lg:mb-6 text-center lg:text-left list-disc list-inside">
+                <h2 className="font-bold text-4xl lg:text-8xl text-white mb-16 lg:mb-10 lg:mr-8">about</h2>
+                <ul className="text-white text-xl lg:text-3xl mb-4 lg:mb-6 text-center lg:text-left list-disc list-inside">
                     <li className="mb-4">
                         software engineer from islamabad, pakistan
                     </li>
                     <li className="mb-4">
                         <a href="https://www.nu.edu.pk/" className="text-blue-600 hover:underline underline-offset-4">
-                            fast nuces<Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={30} height={30} />
+                            fast nuces<Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={20} height={20} />
                         </a>{" "}
                         computer science graduate
                     </li>
@@ -24,7 +24,7 @@ export default function About() {
                         expertise with building <span className="text-purple-500">mobile</span>/<span className="text-purple-500">web</span> apps, and creating <span className="text-red-500">machine learning</span> and <span className="text-red-500">artificial intelligence</span> based solutions,{" "}
                         <Link href={"/projects"} className="text-green-600 hover:underline underline-offset-4 items-center">
                             see projects
-                            <Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={30} height={30} />
+                            <Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={20} height={20} />
                         </Link>
                     </li>
                 </ul>
