@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content="muhammad umar waseem" />
         <meta property="og:site_name" content="muhammad umar waseem" />
         <meta property="og:url" content="https://muhammadumarwaseem.vercel.app" />
-        <meta property="og:description" content="pakistan based full stack software engineer and computer science gradudate" />
+        <meta property="og:description" content="pakistan based full stack software/ai engineer and computer science graduate" />
         <meta property="og:type" content="profile" />
         <meta property="og:image" content="https://avatars.githubusercontent.com/u/76011160?v=4"></meta>
       </head>
