@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <section className="flex h-[93vh] flex-col lg:flex-row items-start justify-start lg:justify-evenly bg-black p-6">
+        <section className="flex h-[93vh] flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-evenly bg-midnightblue p-16">
             {/* Left side content */}
             <div className="flex flex-col lg:w-1/2 justify-center items-center lg:items-start lg:justify-start h-fit lg:h-full">
                 <h2 className="font-bold text-4xl lg:text-8xl text-white mb-16 lg:mb-10 lg:mr-8">about</h2>
@@ -12,16 +12,16 @@ export default function About() {
                         software engineer from islamabad, pakistan
                     </li>
                     <li className="mb-4">
-                        <a href="https://www.nu.edu.pk/" className="text-blue-600 hover:underline underline-offset-4">
+                        <Link href="https://www.nu.edu.pk/" className="text-blue-600 hover:underline underline-offset-4">
                             fast nuces<Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={20} height={20} />
-                        </a>{" "}
+                        </Link>{" "}
                         computer science graduate
                     </li>
                     <li className="mb-4">
                         actively engaged in converting ideas into software solutions as entrepreneurial ventures
                     </li>
                     <li className="mb-4">
-                        expertise with building full stack <span className="italic font-extrabold">mobile</span> / <span className="italic font-extrabold">web</span> apps, and creating <span className="italic font-extrabold">machine learning</span> and <span className="italic font-extrabold">artificial intelligence</span> based solutions,{" "}
+                        expertise with building full stack <span className="hover:text-purple-500">mobile</span> / <span className="hover:text-purple-500">web</span> apps, and creating <span className="hover:text-red-500">machine learning</span> and <span className="hover:text-red-500">artificial intelligence</span> based solutions,{" "}
                         <Link href={"/projects"} className="text-green-600 hover:underline underline-offset-4 items-center">
                             see projects
                             <Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={20} height={20} />
@@ -31,8 +31,8 @@ export default function About() {
             </div>
 
             {/* Right side image */}
-            <div className="flex justify-center items-center lg:justify-end lg:items-end lg:w-1/2 mt-10">
-                <div className="flex justify-center items-center w-1/2 lg:w-full">
+            <div className="flex justify-center items-center lg:justify-end lg:items-end lg:w-1/2">
+                <div className="flex justify-end items-center w-1/2 lg:w-full">
                     <Image src="/umar.jpeg" alt="Umar's image" width={500} height={500} className="rounded-full" />
                 </div>
             </div>

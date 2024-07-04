@@ -41,16 +41,16 @@ let blogs = [
 
 export default function BlogsIntro() {
     return (
-        <section className="flex h-[93vh] flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-evenly bg-black p-6 relative">
+        <section className="flex h-[93vh] flex-col items-center lg:items-start lg:justify-start bg-midnightblue p-16">
             {/* Top-left heading */}
-            <h2 className="font-bold text-4xl lg:text-8xl text-white mb-8 lg:mb-0 lg:mr-8 absolute top-12 left-12">recent writings</h2>
+            <h2 className="font-bold text-4xl lg:text-8xl text-white mb-14">recent writings</h2>
 
             {/* Bottom-right box links */}
             <div className="flex flex-col lg:flex-col items-end absolute bottom-6 right-6 space-y-4 mb-20 w-full max-w-full pl-10 lg:max-w-3xl">
                 {blogs.map((blog, index) => (
                     <Link key={index} href={blog.link}>
                         <div
-                            className={`flex flex-col group text-white py-3 rounded-lg overflow-hidden text-right animate-slide-in w-full`}
+                            className={`flex flex-col group text-white py-3 rounded-lg overflow-hidden text-right w-full`}
                         >
                             <span className="text-red-400 mr-2 text-xs">{blog.date} - {blog.time}</span>
                             <div className="flex flex-row items-center justify-end">

@@ -3,7 +3,7 @@ import LinkIcon from "../components/icons/link-icon";
 
 export default function Contact() {
     return (
-        <section className="flex h-[93vh] flex-col items-center lg:items-start lg:justify-start bg-black p-6">
+        <section className="flex h-[93vh] flex-col items-center lg:items-start lg:justify-start bg-midnightblue p-16">
             <h2 className="font-bold text-4xl lg:text-8xl text-white mb-14">get in touch</h2>
             <div className="flex flex-col items-center lg:items-start space-y-6" >
                 <div>
