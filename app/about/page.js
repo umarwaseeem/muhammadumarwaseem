@@ -24,7 +24,7 @@ export default function About() {
                             actively engaged in converting ideas into software solutions as entrepreneurial ventures
                         </li>
                         <li className="mb-4">
-                            expertise with building full stack <span className="hover:text-purple-500">mobile</span> / <span className="hover:text-purple-500">web</span> apps, and creating <span className="hover:text-red-500">machine learning</span> and <span className="hover:text-red-500">artificial intelligence</span> based solutions,{" "}
+                            expertise with building <span className="italic">full stack</span> <span className="hover:text-purple-500">mobile</span> / <span className="hover:text-purple-500">web</span> apps, and creating <span className="hover:text-red-500">machine learning</span> and <span className="hover:text-red-500">artificial intelligence</span> based solutions,{" "}
                             <Link href={"/projects"} className="text-green-600 hover:underline underline-offset-4 items-center">
                                 see projects
                                 <Image src="/arrow-top-left.svg" alt="Projects" className="rotate-90 inline" width={20} height={20} />

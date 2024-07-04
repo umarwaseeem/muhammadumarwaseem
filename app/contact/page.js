@@ -2,9 +2,11 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import LinkIcon from '../components/icons/link-icon';
 import PageWrapper from '../components/pagewrapper';
 import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 const contactLinks = [
     {
@@ -63,6 +65,13 @@ export default function Contact() {
         setIsVisible(true);
     }, []);
 
+    // make a function to copy text
+    const copyText = (text) => {
+        navigator.clipboard.writeText(text);
+        // show a modal
+
+    }
+
     return (
         <PageWrapper>
             <section className="flex h-[93vh] flex-col items-center lg:items-start lg:justify-start bg-midnightblue p-16">
@@ -84,6 +93,14 @@ export default function Contact() {
                                         <span className={`${link.color} font-bold text-xl lg:text-4xl`}>{link.label}</span>
                                         <Link href={link.href} className="hover:underline underline-offset-8 text-xl lg:text-4xl text-gray-200">{link.text}</Link>
                                         <LinkIcon />
+
+                                        <Image
+                                            src={"copy.svg"}
+                                            className='cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out'
+                                            alt={link.text} width={30} height={30}
+                                            onClick={
+                                                () => copyText(link.href)
+                                            } />
                                     </motion.div>
                                 ))}
                             </>

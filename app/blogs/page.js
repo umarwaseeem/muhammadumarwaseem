@@ -74,7 +74,7 @@ export default function BlogsIntro() {
                                                 <Image src="/arrow-top-left.svg" alt="arrow icon" width={20} height={20} />
                                                 <span className="text-white mr-2 text-lg lg:text-5xl py-2 relative truncate">
                                                     {blog.title}
-                                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-right"></span>
+                                                    <span className="absolute bottom-2 lg:bottom-1 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-right"></span>
                                                 </span>
                                             </div>
                                         </motion.div>
