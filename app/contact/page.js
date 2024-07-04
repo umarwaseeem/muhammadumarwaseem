@@ -6,7 +6,6 @@ import Image from 'next/image';
 import LinkIcon from '../components/icons/link-icon';
 import PageWrapper from '../components/pagewrapper';
 import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
 
 const contactLinks = [
     {
