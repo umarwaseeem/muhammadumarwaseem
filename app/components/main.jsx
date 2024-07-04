@@ -8,7 +8,7 @@ export default function Main() {
     return (
         <PageWrapper>
 
-            <main className="flex h-[calc(100vh-50px)] flex-col items-center justify-center bg-midnightblue p-6 lg:p-16">
+            <main className="flex h-[calc(100vh-50px)] flex-col items-center justify-center bg-midnightblue p-6 lg:p-16 pb-20">
                 <div className="flex items-center mb-4 space-x-4">
                     <a href="https://www.instagram.com/umarwaseeem/" target="_blank" rel="noopener noreferrer">
                         <InstagramIcon className="w-8 h-8 text-red-500 hover:text-gray-400" />
