@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
     return (
-        <nav className="bg-midnightblue pt-8">
+        <nav className="bg-midnightblue pt-6">
             <ul className="flex flex-row space-x-4 justify-center">
                 <li>
                     <Link href="/" className="text-gray-400 lg:hover:underline underline-offset-4 text-lg lg:text-2xl lg:hover:text-white">home</Link>

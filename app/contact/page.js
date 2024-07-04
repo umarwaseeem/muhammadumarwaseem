@@ -21,7 +21,7 @@ const contactLinks = [
         color: 'text-gray-500',
     },
     {
-        label: 'Twitter / X: ',
+        label: 'Twitter: ',
         href: 'https://twitter.com/umar_terminator',
         text: '@umar_terminator',
         color: 'text-purple-500',
@@ -73,9 +73,9 @@ export default function Contact() {
 
     return (
         <PageWrapper>
-            <section className="flex h-[93vh] flex-col items-center lg:items-start lg:justify-start bg-midnightblue p-16">
+            <section className="flex h-[calc(100vh-50px)] flex-col items-center lg:items-start lg:justify-start bg-midnightblue p-6 lg:p-16">
                 <h2 className="font-bold text-4xl lg:text-8xl text-white mb-14">get in touch</h2>
-                <div className="flex flex-col items-center lg:items-start space-y-6">
+                <div className="flex flex-col items-start lg:items-start space-y-6">
                     <AnimatePresence>
                         {isVisible && (
                             <>
@@ -90,13 +90,13 @@ export default function Contact() {
                                         custom={index}
                                     >
                                         <span className={`${link.color} font-bold text-xl lg:text-4xl`}>{link.label}</span>
-                                        <Link href={link.href} className="hover:underline underline-offset-8 text-xl lg:text-4xl text-gray-200">{link.text}</Link>
-                                        <LinkIcon />
+                                        <Link href={link.href} className="hover:underline underline-offset-4 lg:underline-offset-8 text-md lg:text-4xl text-gray-200">{link.text}</Link>
+                                        {/* <LinkIcon /> */}
 
                                         <Image
                                             src={"copy.svg"}
-                                            className='cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out'
-                                            alt={link.text} width={30} height={30}
+                                            className='cursor-pointer hover:scale-110 transition-transform duration-150 ease-in-out'
+                                            alt={link.text} width={16} height={16}
                                             onClick={
                                                 () => copyText(link.href)
                                             } />
