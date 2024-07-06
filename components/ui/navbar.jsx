@@ -117,7 +117,7 @@ export default function Navbar() {
                 </motion.div>
             )}
             {!isOpen && (
-                <ul className="hidden lg:flex flex-row space-x-4 justify-center">
+                <ul className="hidden lg:flex flex-row space-x-4 lg:px-16 py-4 lg:justify-start">
                     <li>
                         <Link href="/" passHref>
                             <motion.div
