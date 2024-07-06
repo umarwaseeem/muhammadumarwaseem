@@ -6,7 +6,7 @@ export default function About() {
     return (
         <PageWrapper>
 
-            <section className="flex h-fit lg:h-[93vh] flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-evenly bg-midnightblue p-6 lg:p-16">
+            <section className="flex h-fit lg:h-[calc(100vh-50px)] flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-evenly bg-midnightblue p-6 lg:p-16">
                 {/* Left side content */}
                 <div className="flex flex-col lg:w-5/12 justify-center items-center lg:items-start lg:justify-start h-fit lg:h-full">
                     <h2 className="font-bold text-4xl lg:text-8xl text-white">who is umar?</h2>
