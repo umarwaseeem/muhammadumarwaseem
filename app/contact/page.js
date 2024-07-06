@@ -73,8 +73,8 @@ export default function Contact() {
 
     return (
         <PageWrapper>
-            <section className="flex h-[calc(100vh-50px)] flex-col items-center lg:items-start lg:justify-start bg-midnightblue p-6 lg:p-16">
-                <h2 className="font-bold text-4xl lg:text-8xl text-white mb-14">get in touch</h2>
+            <section className="flex h-[calc(100vh-50px)] flex-col items-start lg:justify-start bg-midnightblue p-6 lg:p-16">
+                <h2 className="font-bold text-4xl md:text-5xl lg:text-7xl text-white mb-14">get in touch</h2>
                 <div className="flex flex-col items-start lg:items-start space-y-6">
                     <AnimatePresence>
                         {isVisible && (
@@ -89,8 +89,8 @@ export default function Contact() {
                                         exit="hidden"
                                         custom={index}
                                     >
-                                        <span className={`${link.color} font-bold text-xl lg:text-4xl`}>{link.label}</span>
-                                        <Link href={link.href} className="hover:underline underline-offset-4 lg:underline-offset-8 text-md lg:text-4xl text-gray-200">{link.text}</Link>
+                                        <span className={`${link.color} font-bold text-xl md:text-2xl lg:text-4xl`}>{link.label}</span>
+                                        <Link href={link.href} className="hover:underline underline-offset-4 lg:underline-offset-8 text-md md:text-2xl lg:text-4xl text-gray-200">{link.text}</Link>
                                         {/* <LinkIcon /> */}
 
                                         <Image

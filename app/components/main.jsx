@@ -23,7 +23,7 @@ export default function Main() {
                         <GithubIcon className="w-8 h-8 text-gray-200 hover:text-gray-400" />
                     </a>
                 </div>
-                <h1 className="font-bold px-2 text-4xl md:text-6xl lg:text-8xl text-white lg:text-left mb-2 text-left">muhammad umar waseem</h1>
+                <h1 className="font-bold px-2 text-4xl md:text-6xl lg:text-7xl text-white lg:text-left mb-2 text-left">muhammad umar waseem</h1>
                 <h2 className="px-2 text-xl md:text-3xl lg:text-3xl text-gray-400 lg:text-left text-left">pakistan based <span className='hover:text-green-500'>full stack software</span> and <span className='hover:text-red-500'>machine learning engineer</span></h2>
             </main>
         </PageWrapper>
