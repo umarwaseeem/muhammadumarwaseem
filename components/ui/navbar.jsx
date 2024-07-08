@@ -19,7 +19,7 @@ export default function Navbar() {
 
     return (
         <nav className="bg-midnightblue pt-8">
-            <div className="flex flex-row justify-between items-center px-6">
+            <div className="flex flex-row justify-between items-center px-8">
                 <Link href={"/"} className="text-2xl font-bold text-white lg:hidden">Umar Waseem</Link>
                 <div className="lg:hidden">
                     <button onClick={toggleHamburger} className="focus:outline-none">
