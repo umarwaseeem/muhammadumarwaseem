@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import LinkIcon from '../components/icons/link-icon';
 import PageWrapper from '../components/pagewrapper';
 import { useEffect, useState } from 'react';
 
@@ -64,16 +63,13 @@ export default function Contact() {
         setIsVisible(true);
     }, []);
 
-    // make a function to copy text
     const copyText = (text) => {
         navigator.clipboard.writeText(text);
-        // show a modal
-
     }
 
     return (
         <PageWrapper>
-            <section className="flex h-[calc(100vh-50px)] flex-col items-start lg:justify-start bg-midnightblue p-6 lg:p-16">
+            <section className="flex h-[calc(100vh-50px)] flex-col items-start lg:justify-start bg-midnightblue p-8 lg:p-16">
                 <h2 className="font-bold text-4xl md:text-5xl lg:text-7xl text-white mb-14">get in touch</h2>
                 <div className="flex flex-col items-start lg:items-start space-y-6">
                     <AnimatePresence>
