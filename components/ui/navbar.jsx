@@ -123,9 +123,9 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold lg:hover:underline underline-offset-4`}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
-                                home
+                                {pathname === '/' ? "<home/>" : "home"}
                             </motion.div>
                         </Link>
                     </li>
@@ -134,9 +134,9 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/about' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold lg:hover:underline underline-offset-4`}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/about' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
-                                about
+                                {pathname === '/about' ? "<about/>" : "about"}
                             </motion.div>
                         </Link>
                     </li>
@@ -145,9 +145,9 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/projects' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold lg:hover:underline underline-offset-4`}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/projects' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
-                                projects
+                                {pathname === '/projects' ? "<projects/>" : "projects"}
                             </motion.div>
                         </Link>
                     </li>
@@ -156,9 +156,9 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/blogs' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold lg:hover:underline underline-offset-4`}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/blogs' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
-                                blogs
+                                {pathname === '/blogs' ? "<blogs/>" : "blogs"}
                             </motion.div>
                         </Link>
                     </li>
@@ -167,9 +167,9 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/contact' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold lg:hover:underline underline-offset-4`}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
-                                contact
+                                {pathname === '/contact' ? "<contact/>" : "contact"}
                             </motion.div>
                         </Link>
                     </li>
