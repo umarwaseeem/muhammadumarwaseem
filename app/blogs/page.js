@@ -44,11 +44,11 @@ export default function BlogsIntro() {
                             {blogs.map((blog, index) => (
                                 <Link href={'/blogs/' + blog.slug} passHref key={blog.slug}>
                                     <div
-                                        className={`flex flex-col group text-white py-3 rounded-lg overflow-hidden text-left w-full`}>
+                                        className={`flex flex-col group text-white rounded-lg overflow-hidden text-left w-full bg-cover bg-center`}>
                                         <span className="text-red-400 mr-2 text-xs">{blog.meta.date}</span>
                                         <div className='flex flex-col'>
                                             <div className="flex flex-row items-center justify-start">
-                                                <span className="text-white mr-2 text-lg md:text-2xl lg:text-3xl relative py-1 truncate">
+                                                <span className="text-white mr-2 text-lg md:text-2xl lg:text-3xl relative py-1 truncate bg-transparent">
                                                     {blog.meta.title}
                                                     <span className="absolute bottom-2 lg:bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
                                                 </span>
