@@ -43,7 +43,7 @@ export default function BlogsIntro() {
                                 <Link href={'/blogs/' + blog.slug} passHref key={blog.slug}>
                                     <div
                                         className={`flex flex-col items-start group text-white rounded-lg overflow-hidden text-left w-full pb-6`}>
-                                        <span className="text-red-400 mr-2 text-xs">{blog.meta.date}</span>
+                                        <span className="text-red-400 text-xs">{blog.meta.date}</span>
                                         <div className='flex flex-col'>
                                             <div className="flex flex-row items-center justify-start">
                                                 <span className="text-white mr-2 text-lg md:text-2xl lg:text-3xl relative py-1 truncate bg-transparent">

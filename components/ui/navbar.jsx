@@ -114,6 +114,26 @@ export default function Navbar() {
                             contact
                         </motion.div>
                     </Link>
+                    <Link href="/now" passHref>
+                        <motion.div
+                            onClick={closeMenu}
+                            className="w-full py-2 px-8 text-center"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            now
+                        </motion.div>
+                    </Link>
+                    {/* <Link href="/impossible-list" passHref>
+                        <motion.div
+                            onClick={closeMenu}
+                            className="w-full py-2 px-8 text-center"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            the impossible list
+                        </motion.div>
+                    </Link> */}
                 </motion.div>
             )}
             {!isOpen && (
@@ -173,6 +193,28 @@ export default function Navbar() {
                             </motion.div>
                         </Link>
                     </li>
+                    <li>
+                        <Link href="/now" passHref>
+                            <motion.div
+                                initial={{ color: 'gray' }}
+                                animate={{ color: pathname === '/now' ? '#FFFFFF' : '#808080' }}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/now' ? "" : "lg:hover:underline underline-offset-4"}`}
+                            >
+                                {pathname === '/now' ? "<now/>" : "now"}
+                            </motion.div>
+                        </Link>
+                    </li>
+                    {/* <li>
+                        <Link href="/impossible-list" passHref>
+                            <motion.div
+                                initial={{ color: 'gray' }}
+                                animate={{ color: pathname === '/impossible-list' ? '#FFFFFF' : '#808080' }}
+                                className={`text-lg lg:text-2xl font-bold ${pathname === '/impossible-list' ? "" : "lg:hover:underline underline-offset-4"}`}
+                            >
+                                {pathname === '/impossible-list' ? "<the impossible list/>" : "the impossible list"}
+                            </motion.div>
+                        </Link>
+                    </li> */}
                 </ul>
             )}
         </nav>
