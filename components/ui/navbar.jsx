@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="flex flex-row justify-between items-center px-8">
                 <Link href={"/"} className="text-2xl font-bold text-white lg:hidden font-serif">Umar Waseem</Link>
                 <div className="lg:hidden">
-                    <button onClick={toggleHamburger} className="focus:outline-none">
+                    <button onClick={toggleHamburger} className="focus:outline-none" aria-label='navbar hamburger button'>
                         <motion.svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-8 w-8 text-white"

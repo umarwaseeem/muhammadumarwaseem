@@ -134,5 +134,12 @@ export async function generateMetadata({ params }) {
     return {
         title: blog.frontMatter.title,
         description: blog.frontMatter.description,
+        openGraph: {
+            title: blog.frontMatter.title,
+            description: blog.frontMatter.description,
+            type: 'article',
+            url: `https://example.com/blogs/${params.slug}`,
+            image: blog.frontMatter.image,
+        },
     };
 }
