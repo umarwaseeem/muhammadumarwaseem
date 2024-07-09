@@ -20,7 +20,7 @@ export default function Navbar() {
     return (
         <nav className="bg-midnightblue pt-8">
             <div className="flex flex-row justify-between items-center px-8">
-                <Link href={"/"} className="text-2xl font-bold text-white lg:hidden">Umar Waseem</Link>
+                <Link href={"/"} className="text-2xl font-bold text-white lg:hidden font-serif">Umar Waseem</Link>
                 <div className="lg:hidden">
                     <button onClick={toggleHamburger} className="focus:outline-none">
                         <motion.svg
@@ -117,7 +117,7 @@ export default function Navbar() {
                 </motion.div>
             )}
             {!isOpen && (
-                <ul className="hidden lg:flex flex-row space-x-4 lg:px-16 py-4 lg:justify-start">
+                <ul className="hidden lg:flex flex-row space-x-4 lg:px-16 mb-8 lg:justify-start">
                     <li>
                         <Link href="/" passHref>
                             <motion.div

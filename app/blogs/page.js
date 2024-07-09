@@ -33,10 +33,8 @@ export default function BlogsIntro() {
 
     return (
         <section className="flex h-[calc(100vh-50px)] flex-col items-start justify-start bg-midnightblue p-8 lg:px-16 lg:pb-16">
-            {/* Top-left heading */}
             <h2 className="font-bold text-4xl md:text-5xl lg:text-7xl text-white mb-14">recent writings</h2>
 
-            {/* Bottom-right box links */}
             <div className="flex flex-col items-start space-y-4 mb-20 w-full max-w-full lg:max-w-3xl">
                 <div>
                     {(
@@ -44,7 +42,7 @@ export default function BlogsIntro() {
                             {blogs.map((blog, index) => (
                                 <Link href={'/blogs/' + blog.slug} passHref key={blog.slug}>
                                     <div
-                                        className={`flex flex-col group text-white rounded-lg overflow-hidden text-left w-full bg-cover bg-center`}>
+                                        className={`flex flex-col items-start group text-white rounded-lg overflow-hidden text-left w-full pb-6`}>
                                         <span className="text-red-400 mr-2 text-xs">{blog.meta.date}</span>
                                         <div className='flex flex-col'>
                                             <div className="flex flex-row items-center justify-start">

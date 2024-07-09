@@ -8,7 +8,7 @@ export default function BackButton() {
     return (
         <button 
             onClick={() => router.replace("/blogs")} 
-            className='py-2'>
+            className='py-2 text-gray-400'>
             {"<-"} back
         </button>
     );
