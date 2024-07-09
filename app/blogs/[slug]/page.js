@@ -81,7 +81,7 @@ export default async function Post({ params }) {
                         {allBlogs.map((blog, index) => (
                             <li key={blog.slug} className="truncate">
                                 <Link href={`/blogs/${blog.slug}`} className="text-gray-400 group py-1">
-                                    <span className="text-white">{index + 1} - </span>
+                                    <span className="text-white">{index} - </span>
                                     {blog.meta.title}
                                 </Link>
                             </li>

@@ -71,7 +71,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            home
+                            {"<"}home{" />"}
                         </motion.div>
                     </Link>
                     <Link href="/about" passHref>
@@ -81,7 +81,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            about
+                            {"<"}about{" />"}
                         </motion.div>
                     </Link>
                     <Link href="/projects" passHref>
@@ -91,7 +91,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            projects
+                            {"<"}projects{" />"}
                         </motion.div>
                     </Link>
                     <Link href="/blogs" passHref>
@@ -101,7 +101,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            blogs
+                            {"<"}blogs{" />"}
                         </motion.div>
                     </Link>
                     <Link href="/contact" passHref>
@@ -111,7 +111,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            contact
+                            {"<"}contact{" />"}
                         </motion.div>
                     </Link>
                     <Link href="/now" passHref>
@@ -121,7 +121,7 @@ export default function Navbar() {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            now
+                            {"<"}now{" />"}
                         </motion.div>
                     </Link>
                     {/* <Link href="/impossible-list" passHref>
