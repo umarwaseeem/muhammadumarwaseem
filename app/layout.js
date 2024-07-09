@@ -9,7 +9,7 @@ const inter = Manrope({
 
 export const metadata = {
   title: "Muhammad Umar Waseem",
-  description: "Muhammad is a Pakistan-based Full Stack Software Engineer and Computer Science graduate whose skills range from creating software solutions including Web, Mobile apps to AI-based solutions for a variety of clients",
+  description: "Muhammad is a Pakistan-based Full Stack Software Engineer and CS graduate skilled in Web, Mobile app, and AI solutions for diverse clients.",
   keywords: "Full Stack Software Engineer, AI Engineer, Web Developer, Mobile App Developer, Pakistan",
   author: "Muhammad Umar Waseem",
 };
