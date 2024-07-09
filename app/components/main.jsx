@@ -4,6 +4,8 @@ import TwitterIcon from './icons/twitter-icon';
 import InstagramIcon from './icons/instagram-icon';
 import PageWrapper from './pagewrapper';
 
+import Link from 'next/link';
+
 export default function Main() {
     return (
         <PageWrapper>
