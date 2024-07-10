@@ -121,6 +121,16 @@ export default function Navbar() {
                             {"<"}contact{" />"}
                         </motion.div>
                     </Link>
+                    <Link href="/resume" passHref>
+                        <motion.div
+                            onClick={closeMenu}
+                            className="w-full py-2 px-8 text-center"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {"<"}resume{" />"}
+                        </motion.div>
+                    </Link>
                     {/* <Link href="/now" passHref>
                         <motion.div
                             onClick={closeMenu}
@@ -197,6 +207,17 @@ export default function Navbar() {
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/contact' ? "<contact/>" : "contact"}
+                            </motion.div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/resume" passHref>
+                            <motion.div
+                                initial={{ color: 'gray' }}
+                                animate={{ color: pathname === '/resume' ? '#FFFFFF' : '#808080' }}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/resume' ? "" : "lg:hover:underline underline-offset-4"}`}
+                            >
+                                {pathname === '/resume' ? "<resume/>" : "resume"}
                             </motion.div>
                         </Link>
                     </li>
