@@ -11,7 +11,7 @@ export async function generateMetadata() {
 return {
     title: "Impossible/Bucket List | Muhammad Umar Waseem",
     description: "A list of goals to be acheived.",
-    image: openGraphImage,
+    image: umarAvatar,
     keywords: "goals, bucket list, wish, impossible",
     openGraph: {
         title: "Impossible/Bucket List | Muhammad Umar Waseem",

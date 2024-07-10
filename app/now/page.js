@@ -12,7 +12,7 @@ export async function generateMetadata() {
 return {
     title: "Now | Muhammad Umar Waseem",
     description: "Things that Muhammad Umar Waseem is currently doing.",
-    image: openGraphImage,
+    image: umarAvatar,
     keywords: "goals, bucket list, wish, impossible",
     openGraph: {
         title: "Now | Muhammad Umar Waseem",
