@@ -7,7 +7,7 @@ export default function ImpossibleList() {
     );
 }
 
-
+export async function generateMetadata() {
 return {
     title: "Impossible/Bucket List | Muhammad Umar Waseem",
     description: "A list of goals to be acheived.",
@@ -20,4 +20,5 @@ return {
         image: umarAvatar,
         
     },
-};
+}
+}

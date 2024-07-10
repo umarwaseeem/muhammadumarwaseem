@@ -8,7 +8,7 @@ export default function Now() {
 
     );
 }
-
+export async function generateMetadata() {
 return {
     title: "Now | Muhammad Umar Waseem",
     description: "Things that Muhammad Umar Waseem is currently doing.",
@@ -21,4 +21,5 @@ return {
         image: umarAvatar,
         
     },
-};
+}
+}
