@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function GradualSpacing({
     text,
-    duration = 0.5,
+    duration = 0.15,
     delayMultiple = 0.04,
     framerProps = {
         hidden: { opacity: 0, x: -20 },
