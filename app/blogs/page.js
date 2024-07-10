@@ -75,7 +75,7 @@ export async function generateMetadata() {
     return {
         title: "Blogs | Muhammad Umar Waseem",
         description: "A collection of blogs written by Muhammad Umar Waseem who is a young software engineer and an aspiring entrepreneur.",
-        image: openGraphImage,
+        image: umarAvatar,
         openGraph: {
             title: "Blogs | Muhammad Umar Waseem",
             description: "A collection of blogs written by Muhammad Umar Waseem who is a young software engineer and an aspiring entrepreneur.",

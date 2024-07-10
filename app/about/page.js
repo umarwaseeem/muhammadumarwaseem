@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import PageWrapper from "../components/pagewrapper";
 import LinkIcon from "../components/icons/link-icon";
 import { umarAvatar } from "../images";
 
@@ -100,7 +99,7 @@ export async function generateMetadata() {
     return {
         title: "About | Muhammad Umar Waseem",
         description: "Who is Muhammad Umar? Get to know him out of professional life and in his professional life with his expertise and background.",
-        image: openGraphImage,
+        image: umarAvatar,
         keywords: "about, Muhammad Umar Waseem, software engineer, web developer, full stack developer, tensorflow, pytorch, flutter, javascript, Next.js, ReactJs, Golang",
         openGraph: {
             title: "About | Muhammad Umar Waseem",
