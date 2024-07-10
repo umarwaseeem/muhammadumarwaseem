@@ -1,4 +1,4 @@
-
+import { umarAvatar } from '../images';
 export default function Now() {
     return (
 
@@ -8,3 +8,17 @@ export default function Now() {
 
     );
 }
+
+return {
+    title: "Now | Muhammad Umar Waseem",
+    description: "Things that Muhammad Umar Waseem is currently doing.",
+    image: openGraphImage,
+    keywords: "goals, bucket list, wish, impossible",
+    openGraph: {
+        title: "Now | Muhammad Umar Waseem",
+        description: "Things that Muhammad Umar Waseem is currently doing.",
+        url: "https://muhammadumarwaseem.com/now/",
+        image: umarAvatar,
+        
+    },
+};

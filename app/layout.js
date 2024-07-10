@@ -2,6 +2,8 @@ import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/ui/navbar";
 
+import {umarAvatar} from "./images"
+
 const exo2 = Exo_2({
   subsets: ["latin"],
   weight: ["400"],
@@ -28,12 +30,12 @@ export default function RootLayout({ children }) {
         <meta property="og:url" content="https://muhammadumarwaseem.com/" />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="profile" />
-        <meta property="og:image" content="https://avatars.githubusercontent.com/u/76011160?v=4" />
+        <meta property="og:image" content={umarAvatar} />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/76011160?v=4" />
+        <meta name="twitter:image" content={umarAvatar} />
 
         <link rel="canonical" href="https://muhammadumarwaseem.com/" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -59,7 +61,7 @@ export default function RootLayout({ children }) {
             "name": "Muhammad Umar Waseem",
             "description": metadata.description,
             "url": "https://muhammadumarwaseem.com/",
-            "image": "https://avatars.githubusercontent.com/u/76011160?v=4"
+            "image": umarAvatar
           }) }}
         />
       </head>

@@ -132,9 +132,9 @@ export async function generateMetadata({ params }) {
     const blog = getPost(params.slug);
 
     return {
-        title: blog.frontMatter.title,
-        description: blog.frontMatter.description,
-        image: blog.frontMatter.image,
+        // title: blog.frontMatter.title,
+        // description: blog.frontMatter.description,
+        // image: blog.frontMatter.image,
         openGraph: {
             title: blog.frontMatter.title,
             description: blog.frontMatter.description,

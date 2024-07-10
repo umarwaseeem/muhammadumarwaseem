@@ -3,6 +3,7 @@
 
 
 import ContactList from '../components/contactlist';
+import { umarAvatar } from '../images';
 
 
 
@@ -30,7 +31,7 @@ export async function generateMetadata() {
             title: "Contact | Muhammad Umar Waseem",
             description: "Get in touch with Muhammad Umar and lets have a chat about how he can collaborate with you.",
             url: "https://muhammadumarwaseem.com/contact/",
-            image: openGraphImage,
+            image: umarAvatar,
             
         },
     };

@@ -6,6 +6,7 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 
 import LinkIcon from '../components/icons/link-icon';
+import { umarAvatar } from '../images';
 
 
 export default function BlogsIntro() {
@@ -67,7 +68,7 @@ export default function BlogsIntro() {
     );
 }
 
-const openGraphImage = "https://avatars.githubusercontent.com/u/76011160?v=4"
+
 
 export async function generateMetadata() {
 
@@ -79,7 +80,7 @@ export async function generateMetadata() {
             title: "Blogs | Muhammad Umar Waseem",
             description: "A collection of blogs written by Muhammad Umar Waseem who is a young software engineer and an aspiring entrepreneur.",
             url: "https://muhammadumarwaseem.com/blogs",
-            image: openGraphImage,
+            image: umarAvatar,
         },
     };
 }

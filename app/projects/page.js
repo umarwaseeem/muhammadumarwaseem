@@ -1,4 +1,5 @@
 import PageWrapper from "../components/pagewrapper";
+import { umarAvatar } from "../images";
 
 export default function About() {
     return (
@@ -11,7 +12,6 @@ export default function About() {
     );
 }
 
-const openGraphImage = "https://avatars.githubusercontent.com/u/76011160?v=4"
 
 export async function generateMetadata() {
 
@@ -24,7 +24,7 @@ export async function generateMetadata() {
             title: "Projects | Muhammad Umar Waseem",
             description: "Get to know about the projects that Muhammad Umar has worked on and the ones he is currently working on.",
             url: "https://muhammadumarwaseem.com/projects/",
-            image: openGraphImage,
+            image: umarAvatar,
             
         },
     };
