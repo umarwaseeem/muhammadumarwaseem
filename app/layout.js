@@ -38,6 +38,19 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href="https://muhammadumarwaseem.com/" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+        <meta name="msapplication-TileColor" content="#2b5797"/>
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+        <meta name="theme-color" content="#ffffff"/>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
