@@ -66,3 +66,20 @@ export default function BlogsIntro() {
         </section>
     );
 }
+
+const openGraphImage = "https://avatars.githubusercontent.com/u/76011160?v=4"
+
+export async function generateMetadata() {
+
+    return {
+        title: "Blogs | Muhammad Umar Waseem",
+        description: "A collection of blogs written by Muhammad Umar Waseem who is a young software engineer and an aspiring entrepreneur.",
+        image: openGraphImage,
+        openGraph: {
+            title: "Blogs | Muhammad Umar Waseem",
+            description: "A collection of blogs written by Muhammad Umar Waseem who is a young software engineer and an aspiring entrepreneur.",
+            url: "https://muhammadumarwaseem.com/blogs",
+            image: openGraphImage,
+        },
+    };
+}

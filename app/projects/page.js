@@ -10,3 +10,22 @@ export default function About() {
 
     );
 }
+
+const openGraphImage = "https://avatars.githubusercontent.com/u/76011160?v=4"
+
+export async function generateMetadata() {
+
+    return {
+        title: "Projects | Muhammad Umar Waseem",
+        description: "Get to know about the projects that Muhammad Umar has worked on and the ones he is currently working on.",
+        image: openGraphImage,
+        keywords: "projects, Muhammad Umar Waseem, software engineer, web developer, full stack developer, tensorflow, pytorch, flutter, javascript, Next.js, ReactJs, Golang",
+        openGraph: {
+            title: "Projects | Muhammad Umar Waseem",
+            description: "Get to know about the projects that Muhammad Umar has worked on and the ones he is currently working on.",
+            url: "https://muhammadumarwaseem.com/projects/",
+            image: openGraphImage,
+            
+        },
+    };
+}

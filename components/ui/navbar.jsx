@@ -5,6 +5,13 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+import {Caveat} from 'next/font/google';
+
+const caveat = Caveat({
+    subsets: ["latin"],
+    weight: ["400"]
+  });
+
 export default function Navbar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +25,9 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-midnightblue pt-8">
+        <nav className={`bg-midnightblue pt-8 ${caveat.className}`}>
             <div className="flex flex-row justify-between items-center px-8">
-                <Link href={"/"} className="text-2xl font-bold text-white lg:hidden font-serif">Umar Waseem</Link>
+                <Link href={"/"} className="text-2xl font-bold text-white lg:hidden">Umar Waseem</Link>
                 <div className="lg:hidden">
                     <button onClick={toggleHamburger} className="focus:outline-none" aria-label='navbar hamburger button'>
                         <motion.svg
@@ -114,7 +121,7 @@ export default function Navbar() {
                             {"<"}contact{" />"}
                         </motion.div>
                     </Link>
-                    <Link href="/now" passHref>
+                    {/* <Link href="/now" passHref>
                         <motion.div
                             onClick={closeMenu}
                             className="w-full py-2 px-8 text-center"
@@ -123,7 +130,7 @@ export default function Navbar() {
                         >
                             {"<"}now{" />"}
                         </motion.div>
-                    </Link>
+                    </Link> */}
                     {/* <Link href="/impossible-list" passHref>
                         <motion.div
                             onClick={closeMenu}
@@ -143,7 +150,7 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/' ? "<home/>" : "home"}
                             </motion.div>
@@ -154,7 +161,7 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/about' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/about' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/about' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/about' ? "<about/>" : "about"}
                             </motion.div>
@@ -165,7 +172,7 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/projects' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/projects' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/projects' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/projects' ? "<projects/>" : "projects"}
                             </motion.div>
@@ -176,7 +183,7 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/blogs' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/blogs' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/blogs' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/blogs' ? "<blogs/>" : "blogs"}
                             </motion.div>
@@ -187,29 +194,29 @@ export default function Navbar() {
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/contact' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/contact' ? "<contact/>" : "contact"}
                             </motion.div>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link href="/now" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/now' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/now' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/now' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/now' ? "<now/>" : "now"}
                             </motion.div>
                         </Link>
-                    </li>
+                    </li> */}
                     {/* <li>
                         <Link href="/impossible-list" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/impossible-list' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-2xl font-bold ${pathname === '/impossible-list' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/impossible-list' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/impossible-list' ? "<the impossible list/>" : "the impossible list"}
                             </motion.div>
