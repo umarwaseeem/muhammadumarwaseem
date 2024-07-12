@@ -64,16 +64,13 @@ export default async function Post({ params }) {
     const headings = await getHeadings(props.content);
     const allBlogs = getAllBlogs();
 
-    // Find index of current blog in sorted list
     const currentIndex = allBlogs.findIndex((blog) => blog.slug === params.slug);
 
-    // Determine next and previous blogs
-    const nextBlog = currentIndex > 0 ? allBlogs[currentIndex - 1] : null;
-    const prevBlog = currentIndex < allBlogs.length - 1 ? allBlogs[currentIndex + 1] : null;
+    const prevBlog = currentIndex > 0 ? allBlogs[currentIndex - 1] : null;
+    const nextBlog = currentIndex < allBlogs.length - 1 ? allBlogs[currentIndex + 1] : null;
 
     return (
-        <div className="flex flex-col lg:flex-row">
-            {/* Left Sidebar with blog links */}
+        <section className="flex flex-col lg:flex-row bg-midnightblue">
             <div className="hidden lg:block lg:w-1/4 px-16 py-4 text-white">
                 <div className="sticky top-20 flex flex-col">
                     <h2 className="text-3xl font-bold mb-4">Other Blogs</h2>
@@ -96,17 +93,17 @@ export default async function Post({ params }) {
                 <MDXRemote source={props.content} />
                 
                 {/* Navigation links */}
-                <div className="mt-8 flex justify-between text-gray-400 truncate">
+                <div className="mt-8 flex justify-between text-gray-400 truncate mb-8">
                     {!prevBlog && <div></div>}
                     {prevBlog && (
                         <Link href={`/blogs/${prevBlog.slug}`} passHref className='no-underline font-extrabold'>
-                            {"<-"} Previous Article: {prevBlog.meta.title}
+                            {"<-"} Previous
                         </Link>
                     )}
                     {!nextBlog && <div></div>}
                     {nextBlog && (
                         <Link href={`/blogs/${nextBlog.slug}`} passHref className='no-underline font-extrabold'>
-                            Next Article: {nextBlog.meta.title} {"->"}
+                            Next {"->"}
                         </Link>
                     )}
                 </div>
@@ -124,7 +121,7 @@ export default async function Post({ params }) {
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

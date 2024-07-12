@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *{
-  background-color: #101720;
+  /* background-color: #101720; */
 }
 
 .container {

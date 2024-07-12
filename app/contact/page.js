@@ -11,7 +11,7 @@ export default function Contact() {
 
 
     return (
-            <section className="flex h-[calc(100vh-100px)] flex-col items-start lg:justify-start bg-midnightblue p-8 lg:px-16 lg:pb-16">
+            <section className="flex h-[calc(100vh-68px)] flex-col items-start lg:justify-start bg-midnightblue p-8 lg:px-16 lg:pb-16">
                 <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-14">get in touch</h2>
                 <ContactList />
             </section>
