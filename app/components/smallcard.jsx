@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import LinkIcon from './icons/link-icon';
 
 export default function SmallCard({ title, description, date, coverImage, category, className }) {
     return (
-        <div className={`${className} relative flex flex-row rounded-lg overflow-hidden shadow-lg group h-40 bg-gray-800`}>
+        <div className={`${className} relative flex flex-row rounded-lg overflow-hidden shadow-lg h-40 lg:h-48 bg-gray-800`}>
             <div className="relative w-1/3 h-full">
                 <Image
                     className="object-cover w-full h-full rounded-l-lg"
@@ -23,9 +22,9 @@ export default function SmallCard({ title, description, date, coverImage, catego
                         {description}
                     </p>
                 </div>
-                <p className="text-xs lg:text-sm flex justify-end mt-2">
+                {/* <p className="text-xs lg:text-sm flex justify-end mt-2">
                     Read more <LinkIcon height={10} width={10} />
-                </p>
+                </p> */}
             </div>
         </div>
     )
