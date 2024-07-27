@@ -15,19 +15,19 @@ const iconData = [
         colorClass: "text-red-500"
     },
     {
-        href: "https://twitter.com/umar_terminator",
+        href: "https://twitter.com/umarwaseeem",
         ariaLabel: "muhammad umar waseem twitter link",
         icon: TwitterIcon,
         colorClass: "text-purple-500"
     },
     {
-        href: "https://www.linkedin.com/in/umarwaseem/",
+        href: "https://www.linkedin.com/in/umarwaseeem/",
         ariaLabel: "muhammad umar waseem linkedin link",
         icon: LinkedinIcon,
         colorClass: "text-blue-500"
     },
     {
-        href: "https://github.com/Umar-Waseem",
+        href: "https://github.com/umarwaseeem",
         ariaLabel: "muhammad umar waseem github link",
         icon: GithubIcon,
         colorClass: "text-gray-200"

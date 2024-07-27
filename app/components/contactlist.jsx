@@ -14,19 +14,19 @@ const contactLinks = [
     },
     {
         label: 'Github: ',
-        href: 'https://github.com/Umar-Waseem',
+        href: 'https://github.com/umarwaseeem',
         text: '@umarwaseeem',
         color: 'text-gray-500',
     },
     {
         label: 'Twitter: ',
-        href: 'https://twitter.com/umar_terminator',
+        href: 'https://twitter.com/umarwaseeem',
         text: '@umarwaseeem',
         color: 'text-purple-500',
     },
     {
         label: 'Medium: ',
-        href: 'https://medium.com/@umar.waseem',
+        href: 'https://umarwaseeem.medium.com/',
         text: '@umarwaseeem',
         color: 'text-gray-500',
     },
@@ -38,7 +38,7 @@ const contactLinks = [
     },
     {
         label: 'Linkedin: ',
-        href: 'https://www.linkedin.com/in/umarwaseem/',
+        href: 'https://www.linkedin.com/in/umarwaseeem/',
         text: '@umarwaseeem',
         color: 'text-blue-600',
     },
