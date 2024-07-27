@@ -15,19 +15,19 @@ const contactLinks = [
     {
         label: 'Github: ',
         href: 'https://github.com/Umar-Waseem',
-        text: '@Umar-Waseem',
+        text: '@umarwaseeem',
         color: 'text-gray-500',
     },
     {
         label: 'Twitter: ',
         href: 'https://twitter.com/umar_terminator',
-        text: '@umar_terminator',
+        text: '@umarwaseeem',
         color: 'text-purple-500',
     },
     {
         label: 'Medium: ',
         href: 'https://medium.com/@umar.waseem',
-        text: '@umar.waseem',
+        text: '@umarwaseeem',
         color: 'text-gray-500',
     },
     {
@@ -39,7 +39,7 @@ const contactLinks = [
     {
         label: 'Linkedin: ',
         href: 'https://www.linkedin.com/in/umarwaseem/',
-        text: '@umarwaseem',
+        text: '@umarwaseeem',
         color: 'text-blue-600',
     },
 ];
@@ -62,15 +62,15 @@ export default function ContactList() {
     return (
         <>
             <div className="flex flex-col items-start lg:items-start space-y-6">
-            <AnimatePresence>
-                {isVisible && (
-                    <>
-                        {contactLinks.map((link, index) => (
-                            <ContactLink key={index} link={link} index={index} copyText={copyText} />
-                        ))}
-                    </>
-                )}
-            </AnimatePresence>
+                <AnimatePresence>
+                    {isVisible && (
+                        <>
+                            {contactLinks.map((link, index) => (
+                                <ContactLink key={index} link={link} index={index} copyText={copyText} />
+                            ))}
+                        </>
+                    )}
+                </AnimatePresence>
             </div>
         </>
     );
