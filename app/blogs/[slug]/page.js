@@ -134,15 +134,15 @@ export async function generateMetadata({ params }) {
     const blog = getPost(params.slug);
 
     return {
-        // title: blog.frontMatter.title,
-        // description: blog.frontMatter.description,
-        // image: blog.frontMatter.image,
+        title: blog.frontMatter.title + blog.frontMatter.coverImage,
+        description: blog.frontMatter.description,
+        image: blog.frontMatter.coverImage,
         openGraph: {
-            title: blog.frontMatter.title,
+            title: blog.frontMatter.title + ' | Muhammad Umar Waseem ' + "| " + blog.frontMatter.date,
             description: blog.frontMatter.description,
             type: 'article',
             url: `https://muhammadumarwaseem.com/blogs/${params.slug}`,
-            images: [blog.frontMatter.image],
+            image: blog.frontMatter.coverImage,
         },
     };
 }
