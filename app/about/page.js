@@ -5,7 +5,7 @@ import { umarAvatar } from "../images";
 
 export default function About() {
     return (
-        <section className="flex h-fit md:h-[calc(100vh-68px)] lg:h-[calc(100vh-68px)] flex-col lg:flex-row items-center justify-center lg:justify-evenly bg-midnightblue p-8 lg:px-16">
+        <section className="flex h-fit md:h-[calc(100vh-68px)] lg:h-[calc(100vh-68px)] flex-col lg:flex-row items-center justify-center lg:justify-evenly bg-midnightblue p-4 lg:px-16">
             <div className="flex flex-col w-full lg:w-3/12 justify-start items-start lg:justify-center h-fit lg:h-full">
                 <div className="flex justify-start items-center w-1/2 lg:w-full mt-10">
                     <Image src="/umar.jpeg" alt="Umar's image" width={350} height={350} className="rounded-full" />

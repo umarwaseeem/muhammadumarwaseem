@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import LinkIcon from './icons/link-icon';
 
 export default function SmallCard({ title, description, date, coverImage, category, className }) {
     return (
@@ -15,8 +16,8 @@ export default function SmallCard({ title, description, date, coverImage, catego
                 <div className="flex flex-col">
                     <span className="text-white text-[0.5rem] lg:text-xs bg-green-500 rounded mb-2 inline-block p-1 w-fit">{category}</span>
                     <span className="text-red-400 text-xs block lg:text-sm font-bold">{date}</span>
-                    <h2 className="mt-2 text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate">
-                        {title}
+                    <h2 className="mt-2 text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate hover:text-blue-600">
+                        {title}<LinkIcon />
                     </h2>
                     <p className="text-gray-400 text-xs md:text-sm lg:text-base mt-1 overflow-hidden line-clamp-2">
                         {description}

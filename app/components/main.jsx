@@ -9,7 +9,7 @@ import AnimatedLink from '../components/animatedlink';
 export default function Main() {
     return (
         <main className="bg-midnightblue">
-            <div className="flex h-[calc(100vh-68px)] flex-col lg:w-3/5 lg:items-start items-start justify-center lg:justify-end p-6 lg:p-16 lg:pb-40">
+            <div className="flex h-[calc(100vh-68px)] flex-col lg:w-3/5 lg:items-start items-start justify-center lg:justify-end p-4 lg:p-16 lg:pb-40">
                 <SocialIcons />
                 <h1 className="px-2 font-bold text-4xl md:text-6xl lg:text-7xl text-white lg:text-left mb-2 text-left">muhammad umar waseem</h1>
                 <h2 className="px-2 text-xl md:text-3xl lg:text-3xl text-gray-400 lg:text-left text-left">muhammad umar is a pakistan based

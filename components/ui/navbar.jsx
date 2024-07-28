@@ -5,12 +5,12 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-import {Caveat} from 'next/font/google';
+import { Caveat } from 'next/font/google';
 
 const caveat = Caveat({
     subsets: ["latin"],
     weight: ["400"]
-  });
+});
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -26,7 +26,7 @@ export default function Navbar() {
 
     return (
         <nav className={`bg-midnightblue pt-8 ${caveat.className}`}>
-            <div className="flex flex-row justify-between items-center px-8">
+            <div className="flex flex-row justify-between items-center px-4">
                 <Link href={"/"} className="text-2xl font-bold text-white lg:hidden">Umar Waseem</Link>
                 <div className="lg:hidden">
                     <button onClick={toggleHamburger} className="focus:outline-none" aria-label='navbar hamburger button'>
