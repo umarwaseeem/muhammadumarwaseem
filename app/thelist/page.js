@@ -16,7 +16,7 @@ export async function generateMetadata() {
         openGraph: {
             title: "Impossible/Bucket List | Muhammad Umar Waseem",
             description: "A list of goals to be acheived.",
-            url: "https://muhammadumarwaseem.com/impossible-list/",
+            url: "https://muhammadumarwaseem.com/thelist/",
             // image: umarAvatar,
         },
     }

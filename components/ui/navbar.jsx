@@ -141,7 +141,7 @@ export default function Navbar() {
                             {"<"}now{" />"}
                         </motion.div>
                     </Link> */}
-                    {/* <Link href="/impossible-list" passHref>
+                    {/* <Link href="/thelist" passHref>
                         <motion.div
                             onClick={closeMenu}
                             className="w-full py-2 px-8 text-center"
@@ -233,13 +233,13 @@ export default function Navbar() {
                         </Link>
                     </li> */}
                     {/* <li>
-                        <Link href="/impossible-list" passHref>
+                        <Link href="/thelist" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/impossible-list' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/impossible-list' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                animate={{ color: pathname === '/thelist' ? '#FFFFFF' : '#808080' }}
+                                className={`text-lg lg:text-3xl font-bold ${pathname === '/thelist' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
-                                {pathname === '/impossible-list' ? "<the impossible list/>" : "the impossible list"}
+                                {pathname === '/thelist' ? "<the impossible list/>" : "the impossible list"}
                             </motion.div>
                         </Link>
                     </li> */}
