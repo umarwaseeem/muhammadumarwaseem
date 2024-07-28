@@ -18,7 +18,7 @@ const linkVariants = {
     }),
 };
 
-export default function AnimatedLink({linkText, custom, className}) {
+export default function AnimatedLink({ linkText, custom, className, href }) {
     return (
         <motion.div
             custom={custom}
@@ -27,7 +27,7 @@ export default function AnimatedLink({linkText, custom, className}) {
             animate="visible"
             className={className}
         >
-            <Link href="/blogs" className="text-green-500 font-extrabold text-lg">
+            <Link href={href} className="text-green-500 font-extrabold text-lg">
                 {linkText}
                 <LinkIcon />
             </Link>
