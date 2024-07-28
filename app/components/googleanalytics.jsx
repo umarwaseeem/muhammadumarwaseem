@@ -1,12 +1,12 @@
 import React from 'react';
 import Script from 'next/script';
 
-const GoogleAnalytics = () => {
+const GoogleAnalytics = ({ gID }) => {
     return (
         <>
             <Script
                 strategy='lazyOnload'
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENT_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=G-7PFX5LG1F8`}
             />
 
             <Script id='' strategy='lazyOnload'>
