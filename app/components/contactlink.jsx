@@ -11,7 +11,11 @@ const listItemVariants = {
         opacity: 1,
         x: 0,
         transition: {
-            duration: 0.5,
+            type: "spring",
+            stiffness: 500,
+            damping: 20,
+            duration: 0.6,
+            bounce: 0.3,
         },
     },
 };

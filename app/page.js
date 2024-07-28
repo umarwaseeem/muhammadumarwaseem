@@ -9,7 +9,7 @@ export default function Home() {
 }
 
 const metadata = {
-  title: "Muhammad Umar Waseem",
+  title: "Home | Muhammad Umar Waseem",
   description: "Muhammad is a Pakistan-based Full Stack Software Engineer and CS graduate skilled in Web, Mobile app, and AI solutions for diverse clients.",
   keywords: "Full Stack Software Engineer, AI Engineer, Web Developer, Mobile App Developer, Pakistan",
   author: "Muhammad Umar Waseem",

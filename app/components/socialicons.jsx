@@ -5,6 +5,7 @@ import GithubIcon from './icons/github-icon';
 import LinkedinIcon from './icons/linkedin-icon';
 import TwitterIcon from './icons/twitter-icon';
 import InstagramIcon from './icons/instagram-icon';
+import EmailIcon from './icons/email-icon';
 import Link from 'next/link';
 
 const iconData = [
@@ -31,6 +32,12 @@ const iconData = [
         ariaLabel: "muhammad umar waseem github link",
         icon: GithubIcon,
         colorClass: "text-gray-200"
+    },
+    {
+        href: "mailto:umar.waseem@gmail.com",
+        ariaLabel: "muhammad umar waseem email",
+        icon: EmailIcon,
+        colorClass: "text-red-500"
     },
 ];
 
