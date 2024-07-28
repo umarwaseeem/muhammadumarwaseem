@@ -8,17 +8,16 @@ export default function ImpossibleList() {
 }
 
 export async function generateMetadata() {
-return {
-    title: "Impossible/Bucket List | Muhammad Umar Waseem",
-    description: "A list of goals to be acheived.",
-    image: umarAvatar,
-    keywords: "goals, bucket list, wish, impossible",
-    openGraph: {
+    return {
         title: "Impossible/Bucket List | Muhammad Umar Waseem",
         description: "A list of goals to be acheived.",
-        url: "https://muhammadumarwaseem.com/impossible-list/",
-        image: umarAvatar,
-        
-    },
-}
+        // image: umarAvatar,
+        keywords: "goals, bucket list, wish, impossible",
+        openGraph: {
+            title: "Impossible/Bucket List | Muhammad Umar Waseem",
+            description: "A list of goals to be acheived.",
+            url: "https://muhammadumarwaseem.com/impossible-list/",
+            // image: umarAvatar,
+        },
+    }
 }

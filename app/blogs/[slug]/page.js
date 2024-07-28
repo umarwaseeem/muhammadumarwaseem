@@ -142,7 +142,8 @@ export async function generateMetadata({ params }) {
             description: blog.frontMatter.description,
             type: 'article',
             url: `https://muhammadumarwaseem.com/blogs/${params.slug}`,
-            image: blog.frontMatter.coverImage,
+            images: blog.frontMatter.coverImage,
+            locale: 'en-US',
         },
     };
 }

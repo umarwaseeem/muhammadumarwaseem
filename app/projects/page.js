@@ -24,8 +24,8 @@ export async function generateMetadata() {
             title: "Projects | Muhammad Umar Waseem",
             description: "Get to know about the projects that Muhammad Umar has worked on and the ones he is currently working on.",
             url: "https://muhammadumarwaseem.com/projects/",
-            image: umarAvatar,
-            
+            images: umarAvatar,
+
         },
     };
 }

@@ -104,7 +104,7 @@ export async function generateMetadata() {
             title: "About | Muhammad Umar Waseem",
             description: "Who is Muhammad Umar? Get to know him out of professional life and in his professional life with his expertise and background.",
             url: "https://muhammadumarwaseem.com/about/",
-            image: umarAvatar,
+            images: umarAvatar,
         },
     };
 }

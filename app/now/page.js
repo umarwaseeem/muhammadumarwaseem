@@ -9,17 +9,16 @@ export default function Now() {
     );
 }
 export async function generateMetadata() {
-return {
-    title: "Now | Muhammad Umar Waseem",
-    description: "Things that Muhammad Umar Waseem is currently doing.",
-    image: umarAvatar,
-    keywords: "goals, bucket list, wish, impossible",
-    openGraph: {
+    return {
         title: "Now | Muhammad Umar Waseem",
         description: "Things that Muhammad Umar Waseem is currently doing.",
-        url: "https://muhammadumarwaseem.com/now/",
-        image: umarAvatar,
-        
-    },
-}
+        // image: umarAvatar,
+        keywords: "goals, bucket list, wish, impossible",
+        openGraph: {
+            title: "Now | Muhammad Umar Waseem",
+            description: "Things that Muhammad Umar Waseem is currently doing.",
+            url: "https://muhammadumarwaseem.com/now/",
+            // image: umarAvatar,
+        },
+    }
 }

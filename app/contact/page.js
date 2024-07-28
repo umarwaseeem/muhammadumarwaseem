@@ -11,10 +11,10 @@ export default function Contact() {
 
 
     return (
-            <section className="flex h-[calc(100vh-68px)] flex-col items-start lg:justify-start bg-midnightblue p-8 lg:px-16 lg:pb-16">
-                <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-14">get in touch</h2>
-                <ContactList />
-            </section>
+        <section className="flex h-[calc(100vh-68px)] flex-col items-start lg:justify-start bg-midnightblue p-8 lg:px-16 lg:pb-16">
+            <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-14">get in touch</h2>
+            <ContactList />
+        </section>
     );
 }
 
@@ -31,8 +31,8 @@ export async function generateMetadata() {
             title: "Contact | Muhammad Umar Waseem",
             description: "Get in touch with Muhammad Umar and lets have a chat about how he can collaborate with you.",
             url: "https://muhammadumarwaseem.com/contact/",
-            image: umarAvatar,
-            
+            images: umarAvatar,
+
         },
     };
 }
