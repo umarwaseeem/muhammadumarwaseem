@@ -141,16 +141,6 @@ export default function Navbar() {
                             {"<"}now{" />"}
                         </motion.div>
                     </Link> */}
-                    {/* <Link href="/thelist" passHref>
-                        <motion.div
-                            onClick={closeMenu}
-                            className="w-full py-2 px-8 text-center"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            the impossible list
-                        </motion.div>
-                    </Link> */}
                 </motion.div>
             )}
             {!isOpen && (
@@ -232,17 +222,7 @@ export default function Navbar() {
                             </motion.div>
                         </Link>
                     </li> */}
-                    {/* <li>
-                        <Link href="/thelist" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/thelist' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/thelist' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/thelist' ? "<the impossible list/>" : "the impossible list"}
-                            </motion.div>
-                        </Link>
-                    </li> */}
+
                 </ul>
             )}
         </nav>

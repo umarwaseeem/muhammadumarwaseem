@@ -14,7 +14,7 @@ export default function About() {
 
             <div className="flex flex-col justify-start items-start lg:w-9/12 lg:pl-10">
                 <h2 className="font-bold text-4xl lg:text-6xl text-white pt-6 lg:pt-0 lg:pb-6">about:</h2>
-                <h3 className="text-xl lg:text-3xl text-gray-300 text-left pt-6 lg:pt-0 pb-6 lg:leading-[3rem]">muhammad is a software engineer with expertise in building full stack applications, based in islamabad pakistan</h3>
+                <h3 className="text-xl lg:text-3xl text-white text-left pt-6 lg:pt-0 pb-6 lg:leading-[3rem]">muhammad is a software engineer with expertise in building full stack applications, based in islamabad pakistan</h3>
                 <ul className="text-gray-300 text-md lg:text-2xl text-left lg:text-left list-disc px-4 leading-6 lg:leading-8">
                     <li className="mb-4">
                         <Link href="https://www.nu.edu.pk/" className="text-blue-600 hover:underline underline-offset-4">
