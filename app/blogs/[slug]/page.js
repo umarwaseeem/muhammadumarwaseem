@@ -134,7 +134,7 @@ export async function generateMetadata({ params }) {
     const blog = getPost(params.slug);
 
     return {
-        title: blog.frontMatter.title + blog.frontMatter.coverImage,
+        title: blog.frontMatter.title + ' | Muhammad Umar Waseem ',
         description: blog.frontMatter.description,
         image: blog.frontMatter.coverImage,
         openGraph: {

@@ -1,5 +1,5 @@
 import PageWrapper from "../components/pagewrapper";
-import RepoList from "../components/RepoList";
+import RepoList from "../components/repolist";
 import { umarAvatar } from "../images";
 
 export default function About() {
