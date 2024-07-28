@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SmallCard({ title, description, date, coverImage, category, className }) {
     return (
-        <div className={`${className} relative flex flex-row rounded-lg overflow-hidden shadow-lg h-40 lg:h-48 bg-gray-800`}>
+        <div className={`${className} relative flex flex-row rounded-lg overflow-hidden hover:shadow-lg h-40 lg:h-48 bg-gray-800`}>
             <div className="relative w-1/3 h-full">
                 <Image
                     className="object-cover w-full h-full rounded-l-lg"
@@ -18,7 +18,7 @@ export default function SmallCard({ title, description, date, coverImage, catego
                     <h2 className="mt-2 text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate">
                         {title}
                     </h2>
-                    <p className="text-gray-300 text-xs md:text-sm lg:text-base mt-1 overflow-hidden line-clamp-2">
+                    <p className="text-gray-400 text-xs md:text-sm lg:text-base mt-1 overflow-hidden line-clamp-2">
                         {description}
                     </p>
                 </div>
