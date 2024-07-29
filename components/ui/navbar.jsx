@@ -121,7 +121,7 @@ export default function Navbar() {
                             {"<"}contact{" />"}
                         </motion.div>
                     </Link>
-                    <Link href="/ResumeUmarWaseem.pdf" passHref target='_blank'>
+                    <Link href="/resume" passHref>
                         <motion.div
                             onClick={closeMenu}
                             className="w-full py-2 px-8 text-center"
@@ -201,7 +201,7 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/ResumeUmarWaseem.pdf" passHref target='_blank' download={false}>
+                        <Link href="/resume" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
                                 animate={{ color: pathname === '/resume' ? '#FFFFFF' : '#808080' }}
