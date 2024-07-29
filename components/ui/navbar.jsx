@@ -149,7 +149,7 @@ export default function Navbar() {
                         <Link href="/" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/' ? '#FFFFFF' : '#808080' }}
+                                animate={{ color: pathname === '/' ? 'white' : 'gray' }}
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/' ? "<home/>" : "home"}
@@ -160,7 +160,7 @@ export default function Navbar() {
                         <Link href="/about" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/about' ? '#FFFFFF' : '#808080' }}
+                                animate={{ color: pathname === '/about' ? 'white' : 'gray' }}
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/about' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/about' ? "<about/>" : "about"}
@@ -171,7 +171,7 @@ export default function Navbar() {
                         <Link href="/projects" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/projects' ? '#FFFFFF' : '#808080' }}
+                                animate={{ color: pathname === '/projects' ? 'white' : 'gray' }}
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/projects' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/projects' ? "<projects/>" : "projects"}
@@ -182,7 +182,7 @@ export default function Navbar() {
                         <Link href="/blogs" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/blogs' ? '#FFFFFF' : '#808080' }}
+                                animate={{ color: pathname === '/blogs' ? 'white' : 'gray' }}
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/blogs' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/blogs' ? "<blogs/>" : "blogs"}
@@ -193,7 +193,7 @@ export default function Navbar() {
                         <Link href="/contact" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/contact' ? '#FFFFFF' : '#808080' }}
+                                animate={{ color: pathname === '/contact' ? 'white' : 'gray' }}
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/contact' ? "<contact/>" : "contact"}
@@ -204,7 +204,7 @@ export default function Navbar() {
                         <Link href="/resume" passHref>
                             <motion.div
                                 initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/resume' ? '#FFFFFF' : '#808080' }}
+                                animate={{ color: pathname === '/resume' ? 'white' : 'gray' }}
                                 className={`text-lg lg:text-3xl font-bold ${pathname === '/resume' ? "" : "lg:hover:underline underline-offset-4"}`}
                             >
                                 {pathname === '/resume' ? "<resume/>" : "resume"}

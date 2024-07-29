@@ -106,7 +106,7 @@ export default function Resume() {
                     <p className="mb-4">Find more projects on <a href="https://github.com/Umar-Waseem" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">github.com/Umar-Waseem</a> or on <Link href="/projects" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">/projects</Link></p>
                     <h2 className="text-xl lg:text-3xl font-semibold my-2 underline underline-offset-8">Education</h2>
                     <h3 className="text-lg lg:text-xl font-semibold">Bachelors of Computer Science</h3>
-                    <div class="flex flex-row justify-between">
+                    <div className="flex flex-row justify-between">
                         <p className="mb-4 text-white text-sm lg:text-md leading-6 lg:leading-7 italic">Fast National University of Computer and Emerging Sciences</p>
                         <p className="text-md">2020 - 2024</p>
                     </div>

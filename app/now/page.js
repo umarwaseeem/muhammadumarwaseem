@@ -4,7 +4,7 @@ export default function Now() {
     return (
 
         <section className="flex min-h-screen flex-col items-start justify-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
-            <div class="lg:w-1/2 w-full">
+            <div className="lg:w-1/2 w-full">
                 <h2 className="font-bold text-4xl lg:text-6xl text-white">now</h2>
 
                 <h3 className="font-semibold text-xl lg:text-3xl text-white mt-16">what I am focused on nowadays:</h3>
@@ -26,7 +26,7 @@ export default function Now() {
                     <li className="mb-2">been planning to play the video game elden ring becuase of the hype in the gaming community</li>
                     <li className="mb-2">download and install cyber punk 2077, yearning to explore its few endings out of many</li>
                     <li className="mb-2">read a new fiction book, i like fiction, and reading a book helps me imrpove attention span</li>
-                    <li className="mb-2">explore and experiment with <Link href={"https://threejs.org/"} class="text-yellow-400 italic">three.js</Link></li>
+                    <li className="mb-2">explore and experiment with <Link href={"https://threejs.org/"} className="text-yellow-400 italic">three.js</Link></li>
                 </ul>
 
                 <hr />

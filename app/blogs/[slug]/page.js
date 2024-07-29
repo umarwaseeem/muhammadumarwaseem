@@ -72,7 +72,7 @@ export default async function Post({ params }) {
 
     return (
         <section className="flex flex-col lg:flex-row bg-midnightblue min-h-screen">
-            <div class="flex flex-col w-full">
+            <div className="flex flex-col w-full">
                 <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
                 <div className='flex flex-row'>
                     <div className="hidden lg:block lg:w-1/4 px-16 py-4 text-white">

@@ -8,8 +8,11 @@ export default function SmallCard({ title, description, date, coverImage, catego
                 <Image
                     className="object-cover w-full h-full rounded-l-lg"
                     src={coverImage}
+                    width={200}
+                    height={200}
                     alt={title}
-                    layout="fill"
+                    sizes="(max-width: 768px) 100vw,"
+                    priority={true}
                 />
             </div>
             <div className="relative p-4 text-white flex flex-col justify-between w-2/3 z-10 rounded-r-lg">
