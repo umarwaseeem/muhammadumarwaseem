@@ -3,6 +3,7 @@ import RepoList from "../components/repolist";
 import { umarAvatar } from "../images";
 
 export default function About() {
+
     return (
         <PageWrapper>
             <section className="flex min-h-screen flex-col items-start lg:justify-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
@@ -12,8 +13,6 @@ export default function About() {
         </PageWrapper>
     );
 }
-
-
 
 
 export async function generateMetadata() {

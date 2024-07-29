@@ -6,6 +6,8 @@ import Image from "next/image";
 import Select from 'react-select';
 import LinkIcon from "./icons/link-icon";
 import { motion } from 'framer-motion';
+import { useSearchParams } from "next/navigation";
+
 
 async function fetchGitHubRepos() {
     const perPage = 100;
@@ -35,6 +37,9 @@ const listItemVariants = {
 
 
 export default function RepoList() {
+    const searchParams = useSearchParams();
+    const categoryParam = searchParams.get('category');
+
     const [repos, setRepos] = useState([]);
     const [filteredRepos, setFilteredRepos] = useState([]);
     const [topics, setTopics] = useState([]);
@@ -44,16 +49,23 @@ export default function RepoList() {
     useEffect(() => {
         fetchGitHubRepos().then(repos => {
             setRepos(repos);
-            setFilteredRepos(repos);
             // Extract unique topics
             const allTopics = repos.flatMap(repo => repo.topics || []);
             const uniqueTopics = [...new Set(allTopics)];
             const topicOptions = uniqueTopics.map(topic => ({ value: topic, label: topic }));
-            // sort by alphabetical order
             topicOptions.sort((a, b) => a.label.localeCompare(b.label));
             setTopics(topicOptions);
+
+            // Set initial selected topics based on category parameter or default
+            if (categoryParam) {
+                const categories = categoryParam.split(',').map(cat => cat.trim());
+                const initialSelected = topicOptions.filter(topic => categories.includes(topic.value));
+                setSelectedTopics(initialSelected);
+            } else {
+                setFilteredRepos(repos);
+            }
         });
-    }, []);
+    }, [categoryParam]);
 
     useEffect(() => {
         let filtered = repos;
