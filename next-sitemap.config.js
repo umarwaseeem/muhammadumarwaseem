@@ -10,9 +10,10 @@ const blogSlugs = files.map((file) => {
 module.exports = {
     siteUrl: root,
     generateRobotsTxt: true,
-    sitemapSize: 7000,
+    sitemapSize: 20,
     changefreq: 'weekly',
     exclude: [],
+    generateIndexSitemap: false,
     additionalPaths: async (config) => [
         {
             loc: `${root}`,
