@@ -73,7 +73,7 @@ export default function SocialIcons() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Icon className={`w-8 h-8 ${colorClass} hover:text-gray-400`} />
+                        <Icon className={`w-8 h-8 ${colorClass} hover:text-gray-400 hover:-translate-y-1 hover:transition`} />
                     </Link>
                 </motion.div>
             ))}
