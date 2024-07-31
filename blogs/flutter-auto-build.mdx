@@ -1,0 +1,114 @@
+---
+title: get your flutter app to build itself - automated android builds
+date: "31st July 2024"
+description: learn how you can get your flutter android app automated builds using github actions
+coverImage: /flutter-auto-build.png
+coverImageCredits:
+category: ["Technology", "Flutter", "CI/CD"]
+---
+
+## Intro
+
+Lets automate the build of a flutter android app using [Github Actions](https://github.com/actions).
+By using github actions, you can save your time and resources from builds done locally.
+
+## Steps
+
+First create a new repository on github and upload your flutter project to your github account.
+
+If you prefer to understand the worflow, follow along.
+If you are a copy/paste person, fire away to this [github gist link](https://gist.github.com/umarwaseeem/f8cd3762550e6dfd4f7aeb7057b9e643).
+
+If you dont know how to do that, just press the + button on top right of github homepage, create the repository and the upload your files.
+
+### Create the workflow file
+
+Now, create a folder `.github/workflows` in root of your project.
+
+Create a file named `build.yml` in that folder.
+Github action will automatically pick up the configurations we will setup in a while.
+
+### Configure the workflow
+
+Lets define the name of the github actions workflow.
+(be mindful of the tabs and spaces, those matter in a .yml or yaml file)
+
+```
+name: Flutter Android Build
+```
+
+#### Workflows Events
+
+Now, lets set the events that will trigger the workflow.
+workflow_dispatch gives you a button to trigger the workflow on your will with a button.
+
+```
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # trigger on a button click
+```
+
+#### Define the Workflow Job
+
+In GitHub Actions, jobs are used to define the tasks that need to be executed. For our workflow, we are naming the job `flutter-android-build`. This job will run on the latest version of Ubuntu provided by GitHub Actions.
+
+```
+jobs:
+  flutter-android-build:
+    runs-on: ubuntu-latest
+```
+
+#### Checkout the repository
+
+The first step in our job is to checkout the repository. This allows GitHub Actions to access the code in your repository.
+
+```
+    steps:
+        - name: Checkout Repository
+        uses: actions/checkout@v2
+```
+
+#### Setup Flutter
+
+Next, we need to set up the Flutter environment. We use the `subosito/flutter-action` action to specify the Flutter version that we want to use, which in this case is `3.10.6`.
+
+```
+    - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+            flutter-version: "3.10.6"
+```
+
+#### Install Dependencies
+
+Before building the APK, we need to install the necessary dependencies. This is done using the `flutter pub get` command, which fetches all the dependencies listed in your project's `pubspec.yaml` file.
+
+```
+    - name: Install Dependencies
+        run: flutter pub get
+```
+
+#### Build the APK
+
+With the dependencies installed, we can now build the APK. We use the `flutter build apk --release` command to build a release version of the APK, which is optimized for distribution.
+
+```
+    - name: Build APK
+        run: flutter build apk --release
+```
+
+#### Upload apk to the artifacts
+
+Finally, we archive the built APK using the actions/upload-artifact action. This makes the APK available as an artifact in the GitHub Actions workflow run, allowing you to download it from the GitHub interface.
+
+```
+  - name: Archive Artifacts
+    uses: actions/upload-artifact@v2
+    with:
+      name: app-release
+      path: build/app/outputs/flutter-apk/app-release.apk
+```
+
+Now you can ensure an always ready-to-distribute APK without the need for manual builds!

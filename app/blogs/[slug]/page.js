@@ -6,8 +6,11 @@ import BackButton from '../../components/backbutton';
 import ViewIcon from '../../components/icons/view-icon';
 import Link from 'next/link';
 import Image from 'next/image';
-
 import { recordView } from '../recordView';
+import { preProcess, postProcess } from "../../rehype-pre-raw";
+import AllBlogsList from "../../components/allblogslist";
+import Pre from "../../components/pre"
+import TableOfContent from "../../components/tableofcontents";
 
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join('blogs'));
@@ -65,7 +68,7 @@ function getAllBlogs() {
 
 function calculateReadingTime(mdxContent) {
     // Define the average reading speed (words per minute)
-    const wordsPerMinute = 200;
+    const wordsPerMinute = 150;
 
     // Strip MDX/HTML tags and count the words
     const text = mdxContent.replace(/<\/?[^>]+(>|$)/g, '');
@@ -95,38 +98,70 @@ export default async function Post({ params }) {
 
     const viewsCount = await recordView(params.slug);
 
+    const mdxComponents = {
+        pre: (props) => <Pre {...props} />,
+        // ul: (props) => <ul className="ml-2 list-disc" {...props} />,
+        // li: (props) => <li className="my-1 font-light leading-6" {...props} />,
+        // hr: (props) => <hr className="my-16 border-zinc-300" {...props} />,
+        // a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" />,
+        // h3: (props) => (
+        //     <h3
+        //         className="mb-10 mt-24 text-3xl font-bold tracking-tight sm:mt-36"
+        //         {...props}
+        //     />
+        // ),
+        h2: (props) => {
+            return (
+
+                <h2
+                    id={props.children}
+                    className="text-3xl font-bold"
+                    {...props} />
+            );
+        },
+        h3: (props) => {
+            return (
+                <h3
+                    id={props.children}
+                    className="text-2xl font-bold"
+                    {...props} />
+            );
+        },
+        h4: (props) => {
+            return (
+                <h4
+                    id={props.children}
+                    className="text-xl font-bold"
+                    {...props} />
+            );
+        },
+        p: (props) => <p className="leading-8 text-gray-400" {...props} />,
+        a: (props) => <a className="italic hover:underline-offset-4" {...props} />,
+    };
+
+    const mdxOptions = [
+        preProcess,
+        postProcess,
+    ];
+
     return (
-        <section className="flex flex-col lg:flex-row bg-midnightblue min-h-screen">
+        <section className="flex flex-col lg:flex-row justify-between bg-midnightblue min-h-screen">
             <div className="flex flex-col w-full">
                 <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
                 <div className='flex flex-row'>
-                    <div className="hidden lg:block lg:w-1/4 px-8 py-4 text-white">
-                        <div className="sticky top-20 flex flex-col">
-                            <h2 className="text-3xl font-bold mb-4">Other Blogs</h2>
-                            <ul className="text-lg text-gray-400 space-y-2">
-                                {allBlogs.map((blog, index) => {
-
-                                    return (
-                                        <li key={blog.slug} className="">
-                                            <Link href={`/blogs/${blog.slug}`} className="text-gray-400 group py-1">
-                                                <span className="text-white">{index + 1} - </span>
-                                                <span className={`${blog.slug == params.slug ? 'text-white font-extrabold' : 'text-gray-400'}`}>{blog.meta.title}</span>
-                                            </Link>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                    </div>
+                    <AllBlogsList allBlogs={allBlogs} slug={params.slug} />
                     {/* Main content */}
-                    <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 w-full px-4">
+                    <article className="prose prose-sm md:prose-base underline-offset-2 lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 w-full px-4">
                         <BackButton />
-                        <div className='flex flex-col -space-y-4 mb-6'>
-                            <ViewIcon viewsCount={viewsCount} />
-                            <p className='hover:-translate-y-1 transition hover:text-yellow-400 w-fit'>{readingTime} min(s) read</p>
+                        <div className='flex flex-col -space-y-4 mb-2'>
+                            <div className="flex flex-row">
+                                <ViewIcon viewsCount={viewsCount} />
+                            </div>
+                            <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-yellow-500'>{readingTime} min(s) read</p>
+                            <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-red-500'>{props.frontMatter.date}</p>
                         </div>
                         <h1>{props.frontMatter.title}</h1>
-                        <MDXRemote source={props.content} />
+                        <MDXRemote source={props.content} options={mdxOptions} components={mdxComponents} />
                         {/* Navigation links */}
                         <div className="mt-8 flex justify-between text-gray-400 truncate mb-8">
                             {!prevBlog && <div></div>}
@@ -148,18 +183,8 @@ export default async function Post({ params }) {
                         </div>
                     </article>
                     {/* Right Sidebar with table of contents */}
-                    <div className="hidden lg:block lg:w-1/4 text-white px-0 py-4">
-                        <div className="sticky flex flex-col top-20">
-                            <h2 className="text-3xl font-bold mb-4">Table of Contents</h2>
-                            <ul className="text-lg">
-                                {headings.map((heading, index) => (
-                                    <li key={index} style={{ marginLeft: `${(heading.level - 1) * 1.5}rem` }}>
-                                        <p className="text-gray-400">{"# "}{heading.text}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+                    <TableOfContent headings={headings} />
+
                 </div>
             </div>
         </section >
@@ -167,3 +192,27 @@ export default async function Post({ params }) {
 }
 
 
+export async function generateMetadata({ params }) {
+    const blog = getPost(params.slug);
+    const readTime = calculateReadingTime(blog.content);
+    return {
+        title: blog.frontMatter.title + ' | Muhammad Umar Waseem ',
+        description: blog.frontMatter.description,
+        images: blog.frontMatter.coverImage,
+        openGraph: {
+            title: blog.frontMatter.title + ' | Muhammad Umar Waseem ' + "| " + blog.frontMatter.date + " | " + readTime + " min(s) read",
+            description: blog.frontMatter.description,
+            type: 'article',
+            url: `https://muhammadumarwaseem.com/blogs/${params.slug}`,
+            images: blog.frontMatter.coverImage,
+            locale: 'en-US',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: blog.frontMatter.title + ' | Muhammad Umar Waseem ' + "| " + blog.frontMatter.date + " | " + readTime + " min(s) read",
+            description: blog.frontMatter.description,
+            images: blog.frontMatter.coverImage,
+        },
+        metadataBase: new URL(`https://muhammadumarwaseem.com/blogs/${params.slug}`),
+    };
+}

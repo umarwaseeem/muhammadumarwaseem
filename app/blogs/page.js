@@ -20,12 +20,12 @@ export default function BlogsIntro() {
 
         const { data: frontMatter } = matter(fileContent)
         const slug = filename.replace('.mdx', '')
-        const views = getViews(slug);
+        // const views = getViews(slug);
 
         return {
             meta: frontMatter,
             slug: slug,
-            views: views
+            // views: views
         }
     })
 
