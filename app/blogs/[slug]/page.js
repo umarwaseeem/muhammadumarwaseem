@@ -96,7 +96,7 @@ export default async function Post({ params }) {
 
     const readingTime = calculateReadingTime(props.content);
 
-    const viewsCount = await recordView(params.slug);
+    // const viewsCount = await recordView(params.slug);
 
     const mdxComponents = {
         pre: (props) => <Pre {...props} />,
@@ -144,6 +144,8 @@ export default async function Post({ params }) {
         postProcess,
     ];
 
+
+
     return (
         <section className="flex flex-col lg:flex-row justify-between bg-midnightblue min-h-screen">
             <div className="flex flex-col w-full">
@@ -155,7 +157,7 @@ export default async function Post({ params }) {
                         <BackButton />
                         <div className='flex flex-col -space-y-4 mb-2'>
                             <div className="flex flex-row">
-                                <ViewIcon viewsCount={viewsCount} />
+                                <ViewIcon slug={params.slug} />
                             </div>
                             <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-yellow-500'>{readingTime} min(s) read</p>
                             <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-red-500'>{props.frontMatter.date}</p>
@@ -183,7 +185,7 @@ export default async function Post({ params }) {
                         </div>
                     </article>
                     {/* Right Sidebar with table of contents */}
-                    <TableOfContent headings={headings} />
+                    <TableOfContent headings={headings} slug={params.slug} />
 
                 </div>
             </div>

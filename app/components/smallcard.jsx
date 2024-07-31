@@ -1,8 +1,36 @@
+"use client"
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import LinkIcon from './icons/link-icon';
 import EyeIcon from './icons/eyeicon';
 
-export default function SmallCard({ title, description, date, coverImage, category, className, views }) {
+import { getViews } from '../blogs/recordView'; // Ensure to import your getViews function correctly
+
+export default function SmallCard({ title, description, date, coverImage, category, className, slug }) {
+    const [views, setViews] = useState(0); // Initialize views state
+
+    useEffect(() => {
+        // Fetch the views count asynchronously
+        const fetchViews = async () => {
+            try {
+
+                const viewsCount = await getViews(slug);
+
+                setViews(viewsCount);
+            } catch (error) {
+                console.error('Failed to fetch views:', error);
+            }
+        };
+
+        fetchViews();
+    }, [slug]); // Dependency array to refetch if slug changes
+
+    const formatViews = Intl.NumberFormat('en-US', {
+        notation: "compact",
+        maximumFractionDigits: 1
+    }).format(views);
+
     return (
         <div className={`${className} relative flex flex-row rounded-lg overflow-hidden hover:shadow-lg h-36 lg:h-44 bg-gray-800`}>
             <div className="relative w-1/3 h-full">
@@ -23,7 +51,7 @@ export default function SmallCard({ title, description, date, coverImage, catego
                         <span className="text-red-400 text-xs block lg:text-sm font-bold">{date}</span>
                         <div className='flex flex-row'>
                             <EyeIcon />
-                            <p className='text-xs'>{views ? views : 0}</p>
+                            <p className='text-xs'>{formatViews}</p>
                         </div>
                     </div>
                     <h2 className="text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate hover:text-blue-600">

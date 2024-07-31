@@ -43,7 +43,7 @@ export default function BlogsIntro() {
                                 date={blog.meta.date}
                                 coverImage={blog.meta.coverImage}
                                 category={blog.meta.category}
-                                views={blog.views}
+                                slug={blog.slug}
                             />
                         </div>
                     </Link>

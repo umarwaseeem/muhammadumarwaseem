@@ -1,21 +1,26 @@
 "use client"
 
-// import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 
-// import { recordView } from '../../blogs/recordView';
+import { recordView } from '../../blogs/recordView';
 
 
-export default function ViewIcon({ viewsCount }) {
+export default function ViewIcon({ slug }) {
 
-    // const [viewCount, setViewCount] = useState(0);
+    const [viewCount, setViewCount] = useState(0);
 
-    // useEffect(() => {
-    //     async function fetchViewCount() {
-    //         const views = await recordView(slug);
-    //         setViewCount(views);
-    //     }
-    //     fetchViewCount();
-    // }, []);
+    useEffect(() => {
+        async function fetchViewCount() {
+            const views = await recordView(slug);
+            setViewCount(views);
+        }
+        fetchViewCount();
+    }, []);
+
+    const formattedViews = Intl.NumberFormat('en-US', {
+        notation: "compact",
+        maximumFractionDigits: 1
+    }).format(viewCount);
 
 
     return (
@@ -42,8 +47,9 @@ export default function ViewIcon({ viewsCount }) {
                         c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8C37,28.42,36.552,27.972,36,27.972z"/>
                 </g>
             </svg>
-
-            <p className='mr-2 group-hover:text-green-500'>{viewsCount}</p>
+            <Suspense fallback={" ???"}>
+                <p className='mr-2 group-hover:text-green-600'>{formattedViews}</p>
+            </Suspense>
         </div>
     );
 }
