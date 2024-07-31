@@ -23,7 +23,7 @@ export default function SmallCard({ title, description, date, coverImage, catego
                         <span className="text-red-400 text-xs block lg:text-sm font-bold">{date}</span>
                         <div className='flex flex-row'>
                             <EyeIcon />
-                            <p className='text-xs'>{views}</p>
+                            <p className='text-xs'>{views ? views : 0}</p>
                         </div>
                     </div>
                     <h2 className="text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate hover:text-blue-600">
