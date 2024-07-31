@@ -1,6 +1,7 @@
 import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/ui/navbar";
+import Footer from "../components/ui/footer";
 import GoogleAnalytics from './components/googleanalytics';
 
 const exo2 = Exo_2({
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
