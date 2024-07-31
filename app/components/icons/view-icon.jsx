@@ -7,7 +7,8 @@ async function recordView(slug) {
         console.log("slug: ", slug);
         const body = JSON.stringify({ slug: slug });
         console.log("Sending body: ", body);
-        const response = await fetch('http://192.168.173.122:3000/api/recordViewCount', {  // Ensure no trailing slash
+        const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+        const response = await fetch(`${BASE_URL}/api/recordViewCount`, {  // Ensure no trailing slash
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
