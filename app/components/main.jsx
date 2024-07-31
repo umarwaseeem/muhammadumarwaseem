@@ -1,7 +1,7 @@
 
 
-import SocialIcons from '../components/socialicons';
-import AnimatedLink from '../components/animatedlink';
+import SocialIcons from './socialicons';
+import AnimatedLink from './animatedlink';
 
 
 

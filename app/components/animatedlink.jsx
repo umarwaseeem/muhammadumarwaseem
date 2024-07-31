@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link';
-import LinkIcon from '../components/icons/link-icon';
+import LinkIcon from './icons/link-icon';
 
 
 import { motion } from 'framer-motion';

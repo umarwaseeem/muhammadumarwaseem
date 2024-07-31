@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import BackButton from '../../components/backbutton';
+import ViewIcon from '../../components/icons/view-icon';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -60,6 +61,24 @@ function getAllBlogs() {
     return blogs;
 }
 
+function calculateReadingTime(mdxContent) {
+    // Define the average reading speed (words per minute)
+    const wordsPerMinute = 200;
+
+    // Strip MDX/HTML tags and count the words
+    const text = mdxContent.replace(/<\/?[^>]+(>|$)/g, '');
+    const wordCount = text
+        .split(/\s+/)
+        .filter((word) => word.length > 0).length;
+
+    // Calculate reading time
+    const readingTime = Math.ceil(wordCount / wordsPerMinute);
+
+    return readingTime;
+}
+
+
+
 export default async function Post({ params }) {
     const props = getPost(params.slug);
     const headings = await getHeadings(props.content);
@@ -70,49 +89,64 @@ export default async function Post({ params }) {
     const prevBlog = currentIndex > 0 ? allBlogs[currentIndex - 1] : null;
     const nextBlog = currentIndex < allBlogs.length - 1 ? allBlogs[currentIndex + 1] : null;
 
+    const readingTime = calculateReadingTime(props.content);
+
+    const views = -1
+
     return (
         <section className="flex flex-col lg:flex-row bg-midnightblue min-h-screen">
             <div className="flex flex-col w-full">
                 <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
                 <div className='flex flex-row'>
-                    <div className="hidden lg:block lg:w-1/4 px-16 py-4 text-white">
+                    <div className="hidden lg:block lg:w-1/4 px-8 py-4 text-white">
                         <div className="sticky top-20 flex flex-col">
                             <h2 className="text-3xl font-bold mb-4">Other Blogs</h2>
                             <ul className="text-lg text-gray-400 space-y-2">
-                                {allBlogs.map((blog, index) => (
-                                    <li key={blog.slug} className="truncate">
-                                        <Link href={`/blogs/${blog.slug}`} className="text-gray-400 group py-1">
-                                            <span className="text-white">{index} - </span>
-                                            {blog.meta.title}
-                                        </Link>
-                                    </li>
-                                ))}
+                                {allBlogs.map((blog, index) => {
+
+                                    return (
+                                        <li key={blog.slug} className="">
+                                            <Link href={`/blogs/${blog.slug}`} className="text-gray-400 group py-1">
+                                                <span className="text-white">{index + 1} - </span>
+                                                <span className={`${blog.slug == params.slug ? 'text-white font-extrabold' : 'text-gray-400'}`}>{blog.meta.title}</span>
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </div>
                     {/* Main content */}
-                    <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 max-w-full px-8">
+                    <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 w-full px-4">
                         <BackButton />
+                        <div className='flex flex-col -space-y-4 mb-6'>
+                            <ViewIcon slug={params.slug} />
+                            <p className='hover:-translate-y-1 transition hover:text-yellow-400 w-fit'>{readingTime} min(s) read</p>
+                        </div>
                         <h1>{props.frontMatter.title}</h1>
                         <MDXRemote source={props.content} />
                         {/* Navigation links */}
                         <div className="mt-8 flex justify-between text-gray-400 truncate mb-8">
                             {!prevBlog && <div></div>}
                             {prevBlog && (
-                                <Link href={`/blogs/${prevBlog.slug}`} passHref className='no-underline font-extrabold'>
-                                    {"<-"} Previous
+                                <Link href={`/blogs/${prevBlog.slug}`} passHref className='no-underline font-extrabold flex flex-row group'>
+                                    <p>{"<-"}</p>
+                                    <p className='hidden group-hover:block'>---</p>
+                                    <p>Previous</p>
                                 </Link>
                             )}
                             {!nextBlog && <div></div>}
                             {nextBlog && (
-                                <Link href={`/blogs/${nextBlog.slug}`} passHref className='no-underline font-extrabold'>
-                                    Next {"->"}
+                                <Link href={`/blogs/${nextBlog.slug}`} passHref className='no-underline font-extrabold flex flex-row group'>
+                                    <p>Next</p>
+                                    <p className='hidden group-hover:block'>---</p>
+                                    <p>{"->"}</p>
                                 </Link>
                             )}
                         </div>
                     </article>
                     {/* Right Sidebar with table of contents */}
-                    <div className="hidden lg:block lg:w-1/4 text-white px-16 py-4">
+                    <div className="hidden lg:block lg:w-1/4 text-white px-0 py-4">
                         <div className="sticky flex flex-col top-20">
                             <h2 className="text-3xl font-bold mb-4">Table of Contents</h2>
                             <ul className="text-lg">
@@ -126,24 +160,8 @@ export default async function Post({ params }) {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 
-export async function generateMetadata({ params }) {
-    const blog = getPost(params.slug);
 
-    return {
-        title: blog.frontMatter.title + ' | Muhammad Umar Waseem ',
-        description: blog.frontMatter.description,
-        image: blog.frontMatter.coverImage,
-        openGraph: {
-            title: blog.frontMatter.title + ' | Muhammad Umar Waseem ' + "| " + blog.frontMatter.date,
-            description: blog.frontMatter.description,
-            type: 'article',
-            url: `https://muhammadumarwaseem.com/blogs/${params.slug}`,
-            images: blog.frontMatter.coverImage,
-            locale: 'en-US',
-        },
-    };
-}
