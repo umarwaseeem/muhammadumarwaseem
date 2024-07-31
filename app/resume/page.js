@@ -130,3 +130,18 @@ export default function Resume() {
 
     );
 }
+
+export async function generateMetadata() {
+    return {
+        title: "Resume | Muhammad Umar Waseem",
+        description: "Professional resume of Muhammad Umar Waseem.",
+        image: umarAvatar,
+        openGraph: {
+            title: "Resume | Muhammad Umar Waseem",
+            description: "Professional resume of Muhammad Umar Waseem.",
+            url: "https://muhammadumarwaseem.com/blogs",
+            images: umarAvatar,
+        },
+    };
+}
+
