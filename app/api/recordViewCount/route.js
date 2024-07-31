@@ -3,9 +3,29 @@ import { kv } from "@vercel/kv";
 import crypto from "crypto";
 import { NextResponse } from 'next/server';
 
-export async function GET() {
+
+export async function GET(req) {
     console.log("SERVER GET request received");
-    return NextResponse.json({ message: "You're not getting anything here 🤨" });
+    try {
+        // get slug from query params
+        const { searchParams } = new URL(req.url);
+        const slug = searchParams.get("slug");
+        console.log("Slug received: ", slug);
+
+        if (!slug) {
+            return NextResponse.json({ message: "Missing slug", views: -1, slug: slug }, { status: 400 });
+        }
+
+        const viewKey = ["pageviews", "blogs", slug].join(":");
+        const viewCount = (await kv.get(viewKey)) ?? 0;
+        console.log("View Count:", viewCount);
+
+        return NextResponse.json({ message: "Success", views: viewCount, slug: slug }, { status: 200 });
+
+    } catch (error) {
+        console.error(error);
+        return NextResponse.json({ message: "Error", views: -1, slug: slug }, { status: 500 });
+    }
 }
 
 export async function POST(req) {

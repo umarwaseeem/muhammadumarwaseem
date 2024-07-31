@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { umarAvatar } from '../images';
 import SmallCard from '../components/smallcard';
 
-import { recordView } from "./recordView";
+import { getViews } from "./recordView";
 
 export default function BlogsIntro() {
 
@@ -20,8 +20,7 @@ export default function BlogsIntro() {
 
         const { data: frontMatter } = matter(fileContent)
         const slug = filename.replace('.mdx', '')
-        const views = recordView(slug);
-
+        const views = getViews(slug);
 
         return {
             meta: frontMatter,

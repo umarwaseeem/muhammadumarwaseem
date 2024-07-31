@@ -38,3 +38,11 @@ export async function recordView(slug) {
         console.log("----------")
     }
 }
+
+
+export async function getViews(slug) {
+    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+    const response = await fetch(`${BASE_URL}/api/recordViewCount?slug=${slug}`);
+    const json = await response.json();
+    return json.views;
+}
