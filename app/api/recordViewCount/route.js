@@ -4,10 +4,12 @@ import crypto from "crypto";
 import { NextResponse } from 'next/server';
 
 export async function GET() {
+    console.log("SERVER GET request received");
     return NextResponse.json({ message: "You're not getting anything here 🤨" });
 }
 
 export async function POST(req) {
+    console.log("SERVER POST request received");
     try {
         const json = await req.json();
         console.log("Request received by server: ", json);

@@ -1,3 +1,4 @@
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -5,6 +6,8 @@ import Link from 'next/link'
 
 import { umarAvatar } from '../images';
 import SmallCard from '../components/smallcard';
+
+import { recordView } from "./recordView";
 
 export default function BlogsIntro() {
 
@@ -16,12 +19,17 @@ export default function BlogsIntro() {
         const fileContent = fs.readFileSync(path.join(blogDir, filename), 'utf-8')
 
         const { data: frontMatter } = matter(fileContent)
+        const slug = filename.replace('.mdx', '')
+        const views = recordView(slug);
+
 
         return {
             meta: frontMatter,
-            slug: filename.replace('.mdx', '')
+            slug: slug,
+            views: views
         }
     })
+
 
     return (
         <section className="flex h-[calc(100vh-68px)] overflow-auto flex-col items-start justify-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
@@ -36,12 +44,13 @@ export default function BlogsIntro() {
                                 date={blog.meta.date}
                                 coverImage={blog.meta.coverImage}
                                 category={blog.meta.category}
+                                views={blog.views}
                             />
                         </div>
                     </Link>
                 ))}
             </div>
-        </section>
+        </section >
     );
 }
 

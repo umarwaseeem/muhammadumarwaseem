@@ -1,46 +1,22 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
-async function recordView(slug) {
-    try {
-        console.log("slug: ", slug);
-        const body = JSON.stringify({ slug: slug });
-        console.log("Sending body: ", body);
-        const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-        const response = await fetch(`${BASE_URL}/api/recordViewCount`, {  // Ensure no trailing slash
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: body,
-            cache: "force-cache",
-        });
+// import { recordView } from '../../blogs/recordView';
 
-        console.log("Response URL:", response.url);
-        console.log("Response Status:", response.status);
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+export default function ViewIcon({ viewsCount }) {
 
-        const json = await response.json();
-        console.log("Response json on client: ", json);
-        console.log("message: ", json.message, "\nviews: ", json.views);
-        return json.views;
-    } catch (error) {
-        console.error("Error recording view:", error);
-        return 0; // Return 0 if there is an error
-    }
-}
+    // const [viewCount, setViewCount] = useState(0);
 
-export default function ViewIcon({ slug }) {
+    // useEffect(() => {
+    //     async function fetchViewCount() {
+    //         const views = await recordView(slug);
+    //         setViewCount(views);
+    //     }
+    //     fetchViewCount();
+    // }, []);
 
-    const [viewCount, setViewCount] = useState(0);
-
-    useEffect(() => {
-        recordView(slug).then((count) => setViewCount(count));
-    }, []);
 
     return (
         <div className='flex flex-row items-center hover:-translate-y-1 transition group w-fit'>
@@ -67,7 +43,7 @@ export default function ViewIcon({ slug }) {
                 </g>
             </svg>
 
-            <p className='mr-2 group-hover:text-green-500'>{viewCount}</p>
+            <p className='mr-2 group-hover:text-green-500'>{viewsCount}</p>
         </div>
     );
 }

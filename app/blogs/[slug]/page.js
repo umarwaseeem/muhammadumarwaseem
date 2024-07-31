@@ -7,6 +7,8 @@ import ViewIcon from '../../components/icons/view-icon';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { recordView } from '../recordView';
+
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join('blogs'));
 
@@ -91,7 +93,7 @@ export default async function Post({ params }) {
 
     const readingTime = calculateReadingTime(props.content);
 
-    const views = -1
+    const viewsCount = await recordView(params.slug);
 
     return (
         <section className="flex flex-col lg:flex-row bg-midnightblue min-h-screen">
@@ -120,7 +122,7 @@ export default async function Post({ params }) {
                     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 w-full px-4">
                         <BackButton />
                         <div className='flex flex-col -space-y-4 mb-6'>
-                            <ViewIcon slug={params.slug} />
+                            <ViewIcon viewsCount={viewsCount} />
                             <p className='hover:-translate-y-1 transition hover:text-yellow-400 w-fit'>{readingTime} min(s) read</p>
                         </div>
                         <h1>{props.frontMatter.title}</h1>
