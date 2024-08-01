@@ -12,7 +12,9 @@ module.exports = {
     generateRobotsTxt: true,
     sitemapSize: 20,
     changefreq: 'weekly',
-    exclude: [],
+    exclude: [
+        "/now",
+    ],
     generateIndexSitemap: false,
     additionalPaths: async (config) => [
         {
