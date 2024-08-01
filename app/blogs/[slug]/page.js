@@ -11,6 +11,7 @@ import { preProcess, postProcess } from "../../rehype-pre-raw";
 import AllBlogsList from "../../components/allblogslist";
 import Pre from "../../components/pre"
 import TableOfContent from "../../components/tableofcontents";
+import ShareLinksComponent from '..//../components/sharelinkscomponent';
 
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join('blogs'));
@@ -147,7 +148,7 @@ export default async function Post({ params }) {
 
 
     return (
-        <section className="flex flex-col lg:flex-row justify-between bg-midnightblue min-h-screen">
+        <section className="flex flex-col lg:flex-row justify-between bg-midnightblue min-h-screen pb-20">
             <div className="flex flex-col w-full">
                 <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
                 <div className='flex flex-row'>
@@ -183,6 +184,7 @@ export default async function Post({ params }) {
                                 </Link>
                             )}
                         </div>
+                        <ShareLinksComponent slug={params.slug} className={"lg:hidden block"} />
                     </article>
                     {/* Right Sidebar with table of contents */}
                     <TableOfContent headings={headings} slug={params.slug} />
