@@ -104,7 +104,7 @@ export default async function Post({ params }) {
             return (
                 <h2
                     id={props.children}
-                    className="text-3xl font-semibold mr-2 p-0 m-0 w-fit"
+                    className="text-3xl font-semibold"
                     {...props}
                 />
             );
