@@ -7,7 +7,11 @@ export default function Now() {
             <div className="lg:w-1/2 w-full">
                 <h2 className="font-bold text-4xl lg:text-6xl text-white">now</h2>
 
-                <h3 className="font-semibold text-xl lg:text-3xl text-white mt-16">what I am focused on nowadays:</h3>
+                <p className="italic text-white pt-4">
+                    View nownownow.com <Link target="_blank" href={"https://nownownow.com/p/2JqY"} className="text-blue-600 hover:underline underline-offset-4">profile</Link>.
+                </p>
+
+                <h3 className="font-semibold text-xl lg:text-3xl text-white mt-8">what I am focused on nowadays:</h3>
                 <h4 className="mt-4 text-gray-200 text-md lg:text-xl">* (28th July, 2024)</h4>
                 <ul className="text-gray-400 text-md lg:text-xl text-left lg:text-left list-disc px-4 leading-6 lg:leading-8 mt-4 mb-8">
                     <li className="mb-2">improving my understanding of <Link href={"https://pytorch.org/"} className="text-orange-500 italic">pytorch</Link> deep learning framework.</li>
@@ -35,6 +39,7 @@ export default function Now() {
                 <p className="text-gray-400 text-md lg:text-xl mt-4 leading-6 lg:leading-8">
                     this is a <Link className="text-blue-600 hover:underline underline-offset-4" href={"https://nownownow.com/about"}>now page</Link>, an update page about things that I am currently doing with some addition of my own. This page is primarily inspired by <Link href="https://nownownow.com/" className="text-blue-600 hover:underline underline-offset-4">nownownow.com</Link>.
                     {" "}To put it short, a now page consists of something you'd tell a friend, you haven't seen in a year.
+
                 </p>
             </div>
         </section >

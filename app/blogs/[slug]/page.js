@@ -127,7 +127,7 @@ export default async function Post({ params }) {
             );
         },
         p: (props) => <p className="lg:leading-8 leading-6 text-gray-400" {...props} />,
-        a: (props) => <a className="italic hover:underline-offset-4" {...props} />,
+        a: (props) => <a target='_blank' className="italic hover:underline-offset-4" {...props} />,
         strong: (props) => <strong className="font-semibold" {...props} />,
     };
 
