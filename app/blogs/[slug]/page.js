@@ -12,6 +12,7 @@ import Pre from "../../components/pre"
 import TableOfContent from "../../components/tableofcontents";
 import ShareLinksComponent from '..//../components/sharelinkscomponent';
 
+
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join('blogs'));
 
@@ -139,21 +140,32 @@ export default async function Post({ params }) {
 
     return (
         <section className="flex flex-col lg:flex-row justify-between bg-midnightblue min-h-screen pb-20">
-            <div className="flex flex-col w-full">
-                <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
+            <div className="flex flex-col w-full pt-4">
                 <div className='flex flex-row'>
                     <AllBlogsList allBlogs={allBlogs} slug={params.slug} />
                     {/* Main content */}
                     <article className="prose prose-sm md:prose-base underline-offset-2 lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 w-full px-4">
                         <BackButton />
-                        <div className='flex flex-col -space-y-4 mb-2'>
-                            <div className="flex flex-row">
-                                <ViewIcon slug={params.slug} />
+                        <div className='flex flex-col mb-2'>
+                            <div className='flex flex-row'>
+                                <Image src="/umar.jpeg" alt="Umar's image" width={80} height={80} className="rounded-full" />
+                                <div class="lg:-space-y-14 -space-y-10">
+                                    <div class="flex flex-row ml-4 pt-4">
+                                        <p className='text-xl text-white font-bold mr-2'>Muhammad Umar Waseem</p>
+                                    </div>
+                                    <div class="flex flex-row ml-4">
+                                        <p className='hover:-translate-y-1 transition ease-in-out w-fit hover:text-yellow-500'>{readingTime} min(s) read</p>
+                                        <p className='mr-1 ml-1'>.</p>
+                                        <p className='hover:-translate-y-1 transition ease-in-out w-fit hover:text-red-500'>{props.frontMatter.date}</p>
+                                        <p className='mr-1 ml-1'>.</p>
+                                        <ViewIcon slug={params.slug} />
+
+                                    </div>
+                                </div>
                             </div>
-                            <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-yellow-500'>{readingTime} min(s) read</p>
-                            <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-red-500'>{props.frontMatter.date}</p>
                         </div>
                         <h1 className='font-semibold'>{props.frontMatter.title}</h1>
+                        <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
                         <MDXRemote source={props.content} options={mdxOptions} components={mdxComponents} />
                         {/* Navigation links */}
                         <div className="mt-8 flex justify-between text-gray-400 truncate mb-8">

@@ -56,11 +56,11 @@ const staggerItem = {
     show: { opacity: 1, x: 0 }
 };
 
-export default function SocialIcons() {
+export default function SocialIcons({ height, width, isAnimate }) {
     return (
         <motion.div
             className="flex px-2 items-center mb-4 space-x-4"
-            variants={staggerContainer}
+            variants={isAnimate ? staggerContainer : null}
             initial="hidden"
             animate="show"
         >
@@ -73,7 +73,7 @@ export default function SocialIcons() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Icon className={`w-8 h-8 ${colorClass} hover:text-gray-400 hover:-translate-y-1 hover:transition`} />
+                        <Icon className={`${height ? height : "h-8"} ${width ? width : "w-8"} ${colorClass} hover:text-gray-400 hover:-translate-y-1 hover:transition`} />
                     </Link>
                 </motion.div>
             ))}
