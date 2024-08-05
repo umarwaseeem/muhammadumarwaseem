@@ -11,7 +11,7 @@ export default function CopyButton({ text, className }) {
     const [isCopied, setIsCopied] = useState(false)
 
     const copy = async () => {
-        await navigator.clipboard.writeText(text)
+        await navigator.clipboard.writeText(text.props.children)
         setIsCopied(true)
 
         setTimeout(() => {
@@ -19,7 +19,7 @@ export default function CopyButton({ text, className }) {
         }, 2500)
     }
 
-    const Icon = isCopied ? "Copied" : <Image className='' src="/copy.svg" alt={"copy button"} height={16} width={16} />
+    const Icon = isCopied ? <p>Copied</p> : <Image src="/copy.svg" alt={"copy button"} height={18} width={18} />
 
     return (
         <button

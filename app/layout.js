@@ -6,7 +6,7 @@ import GoogleAnalytics from './components/googleanalytics';
 
 const exo2 = Exo_2({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const JSONLD = ({ data }) => (
@@ -44,7 +44,7 @@ const structuredData = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <JSONLD data={structuredData} />
+      {/* <JSONLD data={structuredData} /> */}
       <body className={exo2.className}>
         <GoogleAnalytics />
         <Navbar />

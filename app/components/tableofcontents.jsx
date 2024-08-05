@@ -7,7 +7,7 @@ export default function TableOfContent({ headings, slug }) {
 
     return (<div className="hidden lg:block lg:w-1/4 text-white px-0 py-4">
         <div className="sticky flex flex-col top-20">
-            <h2 className="text-3xl font-bold mb-4">Table of Contents</h2>
+            <h2 className="text-3xl font-semibold mb-4">Table of Contents</h2>
             <ul className="text-lg">
                 {(() => {
                     // This array tracks the numbering for each heading level

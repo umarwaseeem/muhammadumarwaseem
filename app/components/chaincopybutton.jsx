@@ -2,10 +2,21 @@
 
 import Image from 'next/image';
 
-export default function ChainCopyButton({ link }) {
+export default function ChainCopyButton({ link, className }) {
+
+    const copy = async () => {
+        navigator.clipboard.writeText(link)
+
+        const element = document.getElementById(link.replace('#', ''));
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', `${link}`);
+        }
+    }
+
     return (
-        <button onClick={async () => await navigator.clipboard.writeText(link)}>
-            <Image src={"/chain.svg"} width={20} height={20} className="mr-2 pb-2" alt="heading copy icon" />
+        <button className={className} onClick={async () => copy()}>
+            <Image src={"/chain.svg"} width={20} height={20} className='m-0 p-0 bg-blue-500' alt="heading copy icon" />
         </button>
     )
 }

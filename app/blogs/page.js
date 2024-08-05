@@ -7,7 +7,6 @@ import Link from 'next/link'
 import { umarAvatar } from '../images';
 import SmallCard from '../components/smallcard';
 
-import { getViews } from "./recordView";
 
 export default function BlogsIntro() {
 
@@ -32,7 +31,7 @@ export default function BlogsIntro() {
 
     return (
         <section className="flex h-[calc(100vh-68px)] overflow-auto flex-col items-start justify-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
-            <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-14">recent writings</h2>
+            <h2 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-14">recent writings</h2>
             <div className="flex flex-col w-full">
                 {blogs.map((blog) => (
                     <Link href={'/blogs/' + blog.slug} passHref key={blog.slug}>

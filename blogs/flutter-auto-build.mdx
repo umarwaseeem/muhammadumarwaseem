@@ -23,9 +23,9 @@ If you are a copy/paste person, fire away to this [github gist link](https://gis
 
 ### Create the workflow file
 
-Now, create a folder `.github/workflows` in root of your project.
+Now, create a folder **.github/workflows** in root of your project.
 
-Create a file named `build.yml` in that folder.
+Create a file named **build.yml** in that folder.
 Github action will automatically pick up the configurations we will setup in a while.
 
 ### Configure the workflow
@@ -40,7 +40,7 @@ name: Flutter Android Build
 #### Workflows Events
 
 Now, lets set the events that will trigger the workflow.
-workflow_dispatch gives you a button to trigger the workflow on your will with a button.
+**workflow_dispatch** gives you a button to trigger the workflow on your will with a button.
 
 ```
 on:
@@ -52,7 +52,7 @@ on:
 
 #### Define the Workflow Job
 
-In GitHub Actions, jobs are used to define the tasks that need to be executed. For our workflow, we are naming the job `flutter-android-build`. This job will run on the latest version of Ubuntu provided by GitHub Actions.
+In GitHub Actions, jobs are used to define the tasks that need to be executed. For our workflow, we are naming the job **flutter-android-build**. This job will run on the latest version of Ubuntu provided by GitHub Actions.
 
 ```
 jobs:
@@ -72,7 +72,7 @@ The first step in our job is to checkout the repository. This allows GitHub Acti
 
 #### Setup Flutter
 
-Next, we need to set up the Flutter environment. We use the `subosito/flutter-action` action to specify the Flutter version that we want to use, which in this case is `3.10.6`.
+Next, we need to set up the Flutter environment. We use the **subosito/flutter-action** action to specify the Flutter version that we want to use, which in this case is **3.10.6**.
 
 ```
     - name: Setup Flutter
@@ -83,7 +83,7 @@ Next, we need to set up the Flutter environment. We use the `subosito/flutter-ac
 
 #### Install Dependencies
 
-Before building the APK, we need to install the necessary dependencies. This is done using the `flutter pub get` command, which fetches all the dependencies listed in your project's `pubspec.yaml` file.
+Before building the APK, we need to install the necessary dependencies. This is done using the **flutter pub get** command, which fetches all the dependencies listed in your project's **pubspec.yaml** file.
 
 ```
     - name: Install Dependencies
@@ -92,7 +92,7 @@ Before building the APK, we need to install the necessary dependencies. This is 
 
 #### Build the APK
 
-With the dependencies installed, we can now build the APK. We use the `flutter build apk --release` command to build a release version of the APK, which is optimized for distribution.
+With the dependencies installed, we can now build the APK. We use the **flutter build apk --release** command to build a release version of the APK, which is optimized for distribution.
 
 ```
     - name: Build APK
@@ -101,7 +101,7 @@ With the dependencies installed, we can now build the APK. We use the `flutter b
 
 #### Upload apk to the artifacts
 
-Finally, we archive the built APK using the actions/upload-artifact action. This makes the APK available as an artifact in the GitHub Actions workflow run, allowing you to download it from the GitHub interface.
+Finally, we archive the built APK using the **actions/upload-artifact** action. This makes the APK available as an artifact in the GitHub Actions workflow run, allowing you to download it from the GitHub interface.
 
 ```
   - name: Archive Artifacts

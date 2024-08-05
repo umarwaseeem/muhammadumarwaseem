@@ -6,7 +6,6 @@ import BackButton from '../../components/backbutton';
 import ViewIcon from '../../components/icons/view-icon';
 import Link from 'next/link';
 import Image from 'next/image';
-import { recordView } from '../recordView';
 import { preProcess, postProcess } from "../../rehype-pre-raw";
 import AllBlogsList from "../../components/allblogslist";
 import Pre from "../../components/pre"
@@ -101,30 +100,20 @@ export default async function Post({ params }) {
 
     const mdxComponents = {
         pre: (props) => <Pre {...props} />,
-        // ul: (props) => <ul className="ml-2 list-disc" {...props} />,
-        // li: (props) => <li className="my-1 font-light leading-6" {...props} />,
-        // hr: (props) => <hr className="my-16 border-zinc-300" {...props} />,
-        // a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" />,
-        // h3: (props) => (
-        //     <h3
-        //         className="mb-10 mt-24 text-3xl font-bold tracking-tight sm:mt-36"
-        //         {...props}
-        //     />
-        // ),
         h2: (props) => {
             return (
-
                 <h2
                     id={props.children}
-                    className="text-3xl font-bold"
-                    {...props} />
+                    className="text-3xl font-semibold mr-2 p-0 m-0 w-fit"
+                    {...props}
+                />
             );
         },
         h3: (props) => {
             return (
                 <h3
                     id={props.children}
-                    className="text-2xl font-bold"
+                    className="text-2xl font-semibold"
                     {...props} />
             );
         },
@@ -132,12 +121,13 @@ export default async function Post({ params }) {
             return (
                 <h4
                     id={props.children}
-                    className="text-xl font-bold"
+                    className="text-xl font-semibold"
                     {...props} />
             );
         },
-        p: (props) => <p className="leading-8 text-gray-400" {...props} />,
+        p: (props) => <p className="lg:leading-8 leading-6 text-gray-400" {...props} />,
         a: (props) => <a className="italic hover:underline-offset-4" {...props} />,
+        strong: (props) => <strong className="font-semibold" {...props} />,
     };
 
     const mdxOptions = [
@@ -163,7 +153,7 @@ export default async function Post({ params }) {
                             <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-yellow-500'>{readingTime} min(s) read</p>
                             <p className='hover:-translate-y-1 transition ease-in-out w-fit pb-4 hover:text-red-500'>{props.frontMatter.date}</p>
                         </div>
-                        <h1>{props.frontMatter.title}</h1>
+                        <h1 className='font-semibold'>{props.frontMatter.title}</h1>
                         <MDXRemote source={props.content} options={mdxOptions} components={mdxComponents} />
                         {/* Navigation links */}
                         <div className="mt-8 flex justify-between text-gray-400 truncate mb-8">

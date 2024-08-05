@@ -16,8 +16,8 @@ export default function HeadingItem({ level, text, index, headingNumber }) {
 
     return (
         <li key={index} style={{ marginLeft: `${(level - 1) * 1.5}rem` }}>
-            <Link onClick={onClick} href={`#${text}`} scroll={false}>
-                {headingNumber}{". "}
+            <Link onClick={onClick} href={`#${text}`} scroll={false} className="flex flex-row">
+                <p className="mr-1 font-semibold">{headingNumber}{"."}</p>
                 <span className='text-gray-400'>{text}</span>
             </Link>
         </li>

@@ -27,7 +27,7 @@ export default function ShareLinksComponent({ slug, className }) {
 
     return (
         <div className={clsx("flex flex-col", className)}>
-            <h2 className="text-3xl font-bold mb-4 mt-8">Share The Article</h2>
+            <h2 className="text-3xl font-semibold mb-4 mt-8">Share The Article</h2>
             <div className={"flex flex-row justify-start"}>
                 <Link href={linkedinShareLink} target="_blank" className="hover:text-blue-500 hover:underline mr-2"><LinkedinIcon /></Link>
                 <Link href={twitterShareLink} target="_blank" className="hover:text-purple-500 hover:underline mr-2"><TwitterIcon /></Link>
