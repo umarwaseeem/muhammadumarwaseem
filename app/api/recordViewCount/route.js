@@ -1,13 +1,10 @@
-// pages/api/recordViewCount.js
 import { kv } from "@vercel/kv";
-import crypto from "crypto";
 import { NextResponse } from 'next/server';
 
 
 export async function GET(req) {
     console.log("SERVER GET request received");
     try {
-        // get slug from query params
         const { searchParams } = new URL(req.url);
         const slug = searchParams.get("slug");
         console.log("Slug received: ", slug);
@@ -20,11 +17,23 @@ export async function GET(req) {
         const viewCount = (await kv.get(viewKey)) ?? 0;
         console.log("View Count:", viewCount);
 
-        return NextResponse.json({ message: "Success", views: viewCount, slug: slug }, { status: 200 });
+        return NextResponse.json({ message: "Success", views: viewCount, slug: slug }, {
+            status: 200, headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            },
+        });
 
     } catch (error) {
         console.error(error);
-        return NextResponse.json({ message: "Error", error: error, views: -1, slug: slug }, { status: 500 });
+        return NextResponse.json({ message: "Error", error: error, views: -1, slug: slug }, {
+            status: 500, headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            },
+        });
     }
 }
 
@@ -46,10 +55,22 @@ export async function POST(req) {
         await kv.incr(viewKey);
         viewCount = (await kv.get(viewKey)) ?? 0;
         console.log("Already viewed:", viewCount);
-        return NextResponse.json({ message: "Already viewed", views: viewCount }, { status: 200 });
+        return NextResponse.json({ message: "Already viewed", views: viewCount }, {
+            status: 200, headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            },
+        });
 
     } catch (error) {
         console.error("Error recording view count:", error);
-        return NextResponse.json({ message: "Error recording view count" }, { status: 500 });
+        return NextResponse.json({ message: "Error recording view count" }, {
+            status: 500, headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            },
+        });
     }
 }
