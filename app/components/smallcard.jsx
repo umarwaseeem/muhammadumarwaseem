@@ -14,9 +14,7 @@ export default function SmallCard({ title, description, date, coverImage, catego
         // Fetch the views count asynchronously
         const fetchViews = async () => {
             try {
-
                 const viewsCount = await getViews(slug);
-
                 setViews(viewsCount);
             } catch (error) {
                 console.error('Failed to fetch views:', error);
@@ -32,10 +30,10 @@ export default function SmallCard({ title, description, date, coverImage, catego
     }).format(views);
 
     return (
-        <div className={`${className} relative flex flex-row rounded-lg overflow-hidden hover:shadow-lg h-36 lg:h-44 bg-gray-800`}>
-            <div className="relative w-1/3 h-full">
+        <div className={`${className} relative flex flex-row rounded-lg overflow-hidden hover:shadow-lg group`}>
+            <div className="relative w-full h-full">
                 <Image
-                    className="object-cover w-full h-full rounded-l-lg"
+                    className="object-cover lg:h-40 h-36 w-full rounded-lg transition-transform duration-300 group-hover:scale-105 group-hover:opacity-100"
                     src={coverImage}
                     width={200}
                     height={200}
@@ -44,16 +42,16 @@ export default function SmallCard({ title, description, date, coverImage, catego
                     priority={true}
                 />
             </div>
-            <div className="relative p-4 text-white flex flex-col justify-between w-2/3 z-10 rounded-r-lg">
-                <div className="flex flex-col">
-                    <span className="text-white text-[0.5rem] lg:text-xs bg-green-500 rounded mb-2 inline-block p-1 w-fit">{category}</span>
+            <div className="absolute inset-0 bg-black bg-opacity-60 text-white flex flex-col justify-between rounded-lg transition-opacity duration-300 group-hover:opacity-0">
+                <div className="flex flex-col p-4">
                     <div className="flex flex-row justify-between">
-                        <span className="text-red-400 text-xs block lg:text-sm font-bold">{date}</span>
+                        <span className="text-white text-[0.5rem] lg:text-xs bg-green-500 rounded mb-2 inline-block p-1 w-fit">{category}</span>
                         <div className='flex flex-row'>
                             <EyeIcon />
                             <p className='text-xs'>{formatViews}</p>
                         </div>
                     </div>
+                    <span className="text-red-400 text-xs block lg:text-sm font-bold">{date}</span>
                     <h2 className="text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate hover:text-blue-600">
                         {title}<LinkIcon />
                     </h2>

@@ -34,8 +34,8 @@ export default function BlogsIntro() {
             <h2 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-14">recent writings</h2>
             <div className="flex flex-col w-full">
                 {blogs.map((blog) => (
-                    <Link href={'/blogs/' + blog.slug} passHref key={blog.slug}>
-                        <div className="relative flex flex-col rounded-lg overflow-hidden shadow-lg group w-full lg:w-1/2 mb-6">
+                    <Link className='lg:w-1/2 w-full' href={'/blogs/' + blog.slug} passHref key={blog.slug}>
+                        <div className="relative flex flex-col rounded-lg overflow-hidden shadow-lg group w-full mb-6">
                             <SmallCard
                                 title={blog.meta.title}
                                 description={blog.meta.description}
