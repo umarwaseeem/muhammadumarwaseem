@@ -2,13 +2,13 @@
 
 
 export async function recordView(slug) {
-    console.log((typeof window) ? "CLIENT" : "SERVER")
-    console.log("---------------")
-    console.log("CALLED RECORD VIEW")
+    // console.log((typeof window) ? "CLIENT" : "SERVER")
+    // console.log("---------------")
+    // console.log("CALLED RECORD VIEW")
     try {
-        console.log("slug: ", slug);
+        // console.log("slug: ", slug);
         const body = JSON.stringify({ slug: slug });
-        console.log("Sending body: ", body);
+        // console.log("Sending body: ", body);
         const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
         const response =
             await fetch(`${BASE_URL}/api/recordViewCount`, {
@@ -20,16 +20,16 @@ export async function recordView(slug) {
                 cache: 'force-cache',
             });
 
-        console.log("Response URL:", response.url);
-        console.log("Response Status:", response.status);
+        // console.log("Response URL:", response.url);
+        // console.log("Response Status:", response.status);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const json = await response.json();
-        console.log("Response json on client: ", json);
-        console.log("message: ", json.message, "\nviews: ", json.views);
+        // console.log("Response json on client: ", json);
+        // console.log("message: ", json.message, "\nviews: ", json.views);
         return json.views;
     } catch (error) {
         console.error("Error recording view:", error);
