@@ -48,7 +48,7 @@ export default function ViewIcon({ slug }) {
                 </g>
             </svg>
             <Suspense fallback={" ???"}>
-                <p className='mr-2 group-hover:text-green-600'>{formattedViews}</p>
+                <p className='mr-2 group-hover:text-green-600 text-white'>{formattedViews}</p>
             </Suspense>
         </div>
     );

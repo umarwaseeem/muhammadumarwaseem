@@ -11,7 +11,7 @@ import AllBlogsList from "../../components/allblogslist";
 import Pre from "../../components/pre"
 import TableOfContent from "../../components/tableofcontents";
 import ShareLinksComponent from '..//../components/sharelinkscomponent';
-
+import HeadingItem from '../../components/headingitem';
 
 export async function generateStaticParams() {
     const files = fs.readdirSync(path.join('blogs'));
@@ -105,7 +105,7 @@ export default async function Post({ params }) {
             return (
                 <h2
                     id={props.children}
-                    className="text-3xl font-semibold"
+                    className="text-3xl font-semibold text-white py-6"
                     {...props}
                 />
             );
@@ -114,7 +114,7 @@ export default async function Post({ params }) {
             return (
                 <h3
                     id={props.children}
-                    className="text-2xl font-semibold"
+                    className="text-2xl font-semibold text-white py-6"
                     {...props} />
             );
         },
@@ -122,13 +122,14 @@ export default async function Post({ params }) {
             return (
                 <h4
                     id={props.children}
-                    className="text-xl font-semibold"
+                    className="text-xl font-semibold text-white py-6"
                     {...props} />
             );
         },
-        p: (props) => <p className="lg:leading-8 leading-6 text-gray-400" {...props} />,
-        a: (props) => <a target='_blank' className="italic hover:underline-offset-4" {...props} />,
-        strong: (props) => <strong className="font-semibold" {...props} />,
+        p: (props) => <p className="lg:leading-8 leading-7 text-gray-400 py-2 lg:text-lg text-md" {...props} />,
+        a: (props) => <Link target='_blank' className="italic underline-offset-4 hover:underline-offset-8 text-white underline font-semibold" {...props} />,
+        strong: (props) => <strong className="font-semibold text-white" {...props} />,
+        ul: (props) => <ul className="list-disc list-outside pl-6 py-2 text-gray-400 leading-8" {...props} />,
     };
 
     const mdxOptions = [
@@ -144,34 +145,67 @@ export default async function Post({ params }) {
                 <div className='flex flex-row'>
                     <AllBlogsList allBlogs={allBlogs} slug={params.slug} />
                     {/* Main content */}
-                    <article className="prose prose-sm md:prose-base underline-offset-2 lg:prose-lg prose-slate !prose-invert lg:mx-auto bg-midnightblue break-words lg:w-1/2 w-full px-4">
+                    <article className="lg:px-10 px-4 bg-midnightblue break-words lg:w-1/2 w-full">
                         <BackButton />
-                        <div className='flex flex-col mb-2'>
+                        <div className='flex flex-col pt-8'>
                             <div className='flex flex-row'>
                                 <Image src="/umar.jpeg" alt="Umar's image" width={80} height={80} className="rounded-full" />
-                                <div class="lg:-space-y-14 -space-y-10">
+                                <div class="flex flex-col">
                                     <div class="flex flex-row ml-4 pt-4">
                                         <p className='text-xl text-white font-bold mr-2'>Muhammad Umar Waseem</p>
                                     </div>
                                     <div class="flex flex-row ml-4">
-                                        <p className='hover:-translate-y-1 transition ease-in-out w-fit hover:text-yellow-500'>{readingTime} min(s) read</p>
-                                        <p className='mr-1 ml-1'>.</p>
-                                        <p className='hover:-translate-y-1 transition ease-in-out w-fit hover:text-red-500'>{props.frontMatter.date}</p>
-                                        <p className='mr-1 ml-1'>.</p>
+                                        <p className='hover:-translate-y-1 transition ease-in-out w-fit hover:text-yellow-500 text-white'>{readingTime} min(s) read</p>
+                                        <p className='mr-1 ml-1 text-white'>.</p>
+                                        <p className='hover:-translate-y-1 transition ease-in-out w-fit hover:text-red-500 text-white'>{props.frontMatter.date}</p>
+                                        <p className='mr-1 ml-1 text-white'>.</p>
                                         <ViewIcon slug={params.slug} />
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <h1 className='font-semibold'>{props.frontMatter.title}</h1>
+                        <h1 className='font-semibold lg:text-6xl  xl text-4xl text-white py-6'>{props.frontMatter.title}</h1>
                         <Image src={props.frontMatter.coverImage} className="w-full object-cover h-60 lg:h-80" alt={props.frontMatter.title} height={300} width={400} />
+                        <h2 className='text-white text-3xl font-semibold lg:hidden py-8'>Table Of Contents</h2>
+                        <ul className="text-lg lg:hidden">
+                            {(() => {
+                                // This array tracks the numbering for each heading level
+                                let levelCounters = [];
+
+                                return headings.map((heading, index) => {
+                                    const currentLevel = heading.level;
+
+                                    // Ensure the levelCounters array has enough elements for current level
+                                    while (levelCounters.length < currentLevel) {
+                                        levelCounters.push(0);
+                                    }
+
+                                    // Increment the current level counter
+                                    levelCounters[currentLevel - 1]++;
+
+                                    // Reset all lower level counters
+                                    for (let i = currentLevel; i < levelCounters.length; i++) {
+                                        levelCounters[i] = 0;
+                                    }
+
+                                    // Construct the heading number string, filtering out zeros
+                                    const headingNumber = levelCounters
+                                        .slice(0, currentLevel)
+                                        .filter(num => num > 0)
+                                        .join(".");
+
+                                    return (
+                                        <HeadingItem text={heading.text} index={index} level={heading.level} headingNumber={headingNumber} />
+                                    );
+                                });
+                            })()}
+                        </ul>
                         <MDXRemote source={props.content} options={mdxOptions} components={mdxComponents} />
                         {/* Navigation links */}
                         <div className="mt-8 flex justify-between text-gray-400 truncate mb-8">
                             {!prevBlog && <div></div>}
                             {prevBlog && (
-                                <Link href={`/blogs/${prevBlog.slug}`} passHref className='no-underline font-extrabold flex flex-row group'>
+                                <Link href={`/blogs/${prevBlog.slug}`} passHref className='no-underline font-extrabold flex flex-row group text-white'>
                                     <p>{"<-"}</p>
                                     <p className='hidden group-hover:block'>---</p>
                                     <p>Previous</p>
@@ -179,7 +213,7 @@ export default async function Post({ params }) {
                             )}
                             {!nextBlog && <div></div>}
                             {nextBlog && (
-                                <Link href={`/blogs/${nextBlog.slug}`} passHref className='no-underline font-extrabold flex flex-row group'>
+                                <Link href={`/blogs/${nextBlog.slug}`} passHref className='no-underline font-extrabold flex flex-row group text-white'>
                                     <p>Next</p>
                                     <p className='hidden group-hover:block'>---</p>
                                     <p>{"->"}</p>
