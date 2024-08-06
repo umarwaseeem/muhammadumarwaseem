@@ -9,7 +9,7 @@ import { Caveat } from 'next/font/google';
 
 const caveat = Caveat({
     subsets: ["latin"],
-    weight: ["400"]
+    weight: ["400", "500", "600", "700"],
 });
 
 export default function Navbar() {
@@ -144,86 +144,88 @@ export default function Navbar() {
                 </motion.div>
             )}
             {!isOpen && (
-                <ul className="hidden lg:flex flex-row space-x-4 lg:px-16 lg:justify-start">
-                    <li>
-                        <Link href="/" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/' ? 'white' : 'gray' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/' ? "<home/>" : "home"}
-                            </motion.div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/about" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/about' ? 'white' : 'gray' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/about' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/about' ? "<about/>" : "about"}
-                            </motion.div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/projects" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/projects' ? 'white' : 'gray' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/projects' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/projects' ? "<projects/>" : "projects"}
-                            </motion.div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/blogs" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/blogs' ? 'white' : 'gray' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/blogs' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/blogs' ? "<blogs/>" : "blogs"}
-                            </motion.div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/contact" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/contact' ? 'white' : 'gray' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/contact' ? "<contact/>" : "contact"}
-                            </motion.div>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/resume" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/resume' ? 'white' : 'gray' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/resume' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/resume' ? "<resume/>" : "resume"}
-                            </motion.div>
-                        </Link>
-                    </li>
-                    {/* <li>
-                        <Link href="/now" passHref>
-                            <motion.div
-                                initial={{ color: 'gray' }}
-                                animate={{ color: pathname === '/now' ? '#FFFFFF' : '#808080' }}
-                                className={`text-lg lg:text-3xl font-bold ${pathname === '/now' ? "" : "lg:hover:underline underline-offset-4"}`}
-                            >
-                                {pathname === '/now' ? "<now/>" : "now"}
-                            </motion.div>
-                        </Link>
-                    </li> */}
-
-                </ul>
+                <div className="flex flex-row justify-between lg:px-16">
+                    <Link href={"/"} className="text-3xl font-thin text-white lg:block hidden">Umar Waseem</Link>
+                    <ul className="hidden lg:flex flex-row space-x-4 lg:justify-start">
+                        <li>
+                            <Link href="/" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/' ? 'white' : 'gray' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/' ? "<home/>" : "home"}
+                                </motion.div>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/about" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/about' ? 'white' : 'gray' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/about' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/about' ? "<about/>" : "about"}
+                                </motion.div>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/projects" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/projects' ? 'white' : 'gray' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/projects' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/projects' ? "<projects/>" : "projects"}
+                                </motion.div>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/blogs" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/blogs' ? 'white' : 'gray' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/blogs' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/blogs' ? "<blogs/>" : "blogs"}
+                                </motion.div>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/contact" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/contact' ? 'white' : 'gray' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/contact' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/contact' ? "<contact/>" : "contact"}
+                                </motion.div>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/resume" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/resume' ? 'white' : 'gray' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/resume' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/resume' ? "<resume/>" : "resume"}
+                                </motion.div>
+                            </Link>
+                        </li>
+                        {/* <li>
+                            <Link href="/now" passHref>
+                                <motion.div
+                                    initial={{ color: 'gray' }}
+                                    animate={{ color: pathname === '/now' ? '#FFFFFF' : '#808080' }}
+                                    className={`text-lg lg:text-3xl font-bold ${pathname === '/now' ? "" : "lg:hover:underline underline-offset-4"}`}
+                                >
+                                    {pathname === '/now' ? "<now/>" : "now"}
+                                </motion.div>
+                            </Link>
+                        </li> */}
+                    </ul>
+                </div>
             )}
         </nav>
     );
