@@ -36,7 +36,7 @@ const TextRevealByWord = ({ text, className, heading }) => {
                     style={{ opacity: linkOpacity }}
                     className="mt-4"
                 >
-                    <Link href="/about" className="text-green-500 lg:text-xl text-lg">
+                    <Link href="/about" className="text-green-500 text-lg">
                         Know about me in detail
                         <LinkIcon />
                     </Link>

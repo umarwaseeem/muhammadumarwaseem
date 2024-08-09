@@ -5,7 +5,7 @@ import { umarAvatar } from "../images";
 export default function Resume() {
     return (
         <section className="p-6 bg-midnightblue text-white lg:px-[20%]">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center pt-20">
                 <Link href="/ResumeUmarWaseem.pdf" className="text-sm lg:text-md text-red-500 font-semibold mb-6 underline underline-offset-4">Download The Resume</Link>
                 <ResumeComponent />
             </div>
