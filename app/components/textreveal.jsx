@@ -21,7 +21,7 @@ const TextRevealByWord = ({ text, className, heading }) => {
                     <Image src="/umar.jpeg" alt="Umar's image" width={200} height={200} className="rounded-full" />
                 </div>
                 <h2 className='text-white text-3xl md:text-4xl lg:text-5xl font-semibold pb-4'>{heading}</h2>
-                <p className={"flex flex-wrap lg:text-2xl text-xl"}>
+                <p className={"flex flex-wrap lg:text-2xl text-lg"}>
                     {words.map((word, i) => {
                         const start = i / words.length;
                         const end = start + 1 / words.length;
@@ -36,7 +36,7 @@ const TextRevealByWord = ({ text, className, heading }) => {
                     style={{ opacity: linkOpacity }}
                     className="mt-4"
                 >
-                    <Link href="/about" className="text-green-500 text-xl">
+                    <Link href="/about" className="text-green-500 lg:text-xl text-lg">
                         Know about me in detail
                         <LinkIcon />
                     </Link>

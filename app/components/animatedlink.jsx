@@ -27,7 +27,7 @@ export default function AnimatedLink({ linkText, custom, className, href }) {
             animate="visible"
             className={className}
         >
-            <Link href={href} className="text-green-500 font-medium text-lg">
+            <Link href={href} className="text-green-500 font-medium lg:text-xl text-md">
                 {linkText}
                 <LinkIcon />
             </Link>

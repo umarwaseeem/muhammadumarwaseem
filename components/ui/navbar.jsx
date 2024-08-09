@@ -25,7 +25,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className={`bg-midnightblue pt-8 ${caveat.className}`}>
+        <nav className={`bg-midnightblue pt-8 ${caveat.className} fixed top-0 left-0 right-0 z-50`}>
             <div className="flex flex-row justify-between items-center px-4">
                 <Link href={"/"} className="text-2xl font-bold text-white lg:hidden">Umar Waseem</Link>
                 <div className="lg:hidden">

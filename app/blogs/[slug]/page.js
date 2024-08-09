@@ -145,7 +145,7 @@ export default async function Post({ params }) {
                 <div className='flex flex-row'>
                     <AllBlogsList allBlogs={allBlogs} slug={params.slug} />
                     {/* Main content */}
-                    <article className="lg:px-10 px-4 bg-midnightblue break-words lg:w-1/2 w-full">
+                    <article className="lg:px-10 px-4 bg-midnightblue break-words lg:w-1/2 w-full relative z-10">
                         <BackButton />
                         <div className='flex flex-col pt-8'>
                             <div className='flex flex-row'>

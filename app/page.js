@@ -1,4 +1,3 @@
-import { type } from 'os';
 import Main from './components/main';
 import { umarAvatar } from './images';
 

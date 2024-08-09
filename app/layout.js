@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../components/ui/navbar";
 import Footer from "../components/ui/footer";
 import GoogleAnalytics from './components/googleanalytics';
+import Particles from './components/particles';
 
 const exo2 = Exo_2({
   subsets: ["latin"],
@@ -47,9 +48,16 @@ export default function RootLayout({ children }) {
       {/* <JSONLD data={structuredData} /> */}
       <body className={exo2.className}>
         <GoogleAnalytics />
-        <Navbar />
+        <Particles className="fixed inset-0 z-0 pointer-events-none" staticity={40} quantity={200} size={0.6} />
+
+        {/* Main content */}
+        <div className="relative">
+          <Navbar />
+        </div>
         {children}
-        <Footer />
+        <div className="relative z-10">
+          <Footer />
+        </div>
       </body>
     </html>
   );
