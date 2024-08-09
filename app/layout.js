@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
       {/* <JSONLD data={structuredData} /> */}
       <body className={exo2.className}>
         <GoogleAnalytics />
-        <Particles className="fixed inset-0 z-0 pointer-events-none" staticity={40} quantity={200} size={0.6} />
+        <Particles className="fixed inset-0 z-0 pointer-events-none" staticity={40} quantity={300} size={0.6} />
 
         {/* Main content */}
         <div className="relative">
