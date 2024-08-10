@@ -4,7 +4,7 @@ import TextRevealByWord from "../components/textreveal";
 
 export default function Main() {
     const h1 = "building full-stack AI based solutions";
-    const aboutText = "A software engineer from Pakistan with a Bachelors degree in Computer Science. I have experience with working in team based software engineering with a touch of AI/ML based solutions as well as facing a wide range of different problems in the freelance domain. Coding software interests me as it allows me to have control on what I create!"
+    const aboutText = "A software engineer from Pakistan with a Bachelors degree in Computer Science. I have experience with working in team based software engineering with a touch of AI/ML based solutions as well as facing a wide range of different problems in the freelance domain whether its building mobile apps with flutter, web apps with Next.js or no-code apps using Webflow. Coding software interests me as it allows me to have control on what I create!"
 
     return (
         <div className="flex flex-col bg-midnightblue">
