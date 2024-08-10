@@ -33,11 +33,11 @@ export default function BlogsIntro() {
         <section className="flex h-[calc(100vh-68px)] overflow-auto flex-col items-start justify-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
             <h2 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-14 pt-20">recent writings</h2>
             <div className="flex flex-col w-full">
-                {blogs.map((blog) => (
+                {blogs.map((blog, index) => (
                     <Link className='lg:w-1/2 w-full' href={'/blogs/' + blog.slug} passHref key={blog.slug}>
-                        <div className="relative flex flex-col rounded-lg overflow-hidden shadow-lg group w-full mb-6">
+                        <div className="relative flex flex-col rounded-lg overflow-hidden shadow-lg group w-full mb-2">
                             <SmallCard
-                                title={blog.meta.title}
+                                title={index + 1 + ". " + blog.meta.title}
                                 description={blog.meta.description}
                                 date={blog.meta.date}
                                 coverImage={blog.meta.coverImage}

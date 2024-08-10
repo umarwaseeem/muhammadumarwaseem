@@ -42,7 +42,7 @@ export default function SmallCard({ title, description, date, coverImage, catego
                     priority={true}
                 />
             </div>
-            <div className="absolute inset-0 bg-black bg-opacity-60 text-white flex flex-col justify-between rounded-lg transition-opacity duration-300 group-hover:opacity-0">
+            <div className="absolute inset-0 lg:h-40 h-36 bg-black bg-opacity-60 text-white flex flex-col justify-between rounded-lg transition-opacity duration-300 group-hover:opacity-0">
                 <div className="flex flex-col p-4">
                     <div className="flex flex-row justify-between">
                         <span className="text-white text-[0.5rem] lg:text-xs bg-green-500 rounded mb-2 inline-block p-1 w-fit">{category}</span>
@@ -51,7 +51,7 @@ export default function SmallCard({ title, description, date, coverImage, catego
                             <p className='text-xs'>{formatViews}</p>
                         </div>
                     </div>
-                    <span className="text-red-400 text-xs block lg:text-sm font-bold">{date}</span>
+                    <span className="text-red-400 text-xs block lg:text-sm italic">{date}</span>
                     <h2 className="text-md md:text-xl lg:text-2xl font-semibold leading-tight truncate hover:text-blue-600">
                         {title}<LinkIcon />
                     </h2>

@@ -141,7 +141,7 @@ export default async function Post({ params }) {
 
     return (
         <section className="flex flex-col lg:flex-row justify-between bg-midnightblue min-h-screen pb-20">
-            <div className="flex flex-col w-full pt-4">
+            <div className="flex flex-col w-full pt-20">
                 <div className='flex flex-row'>
                     <AllBlogsList allBlogs={allBlogs} slug={params.slug} />
                     {/* Main content */}
