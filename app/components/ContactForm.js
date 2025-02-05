@@ -22,13 +22,24 @@ export default function ContactForm() {
         e.preventDefault();
         setIsSubmitting(true);
         
-        // Here you would typically send the data to your backend
-        // For now, we'll just simulate a submission
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', occupation: '', message: '' });
+            const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+            const response = await fetch(`http://localhost:3000/api/sendEmail`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', occupation: '', message: '' });
+            } else {
+                setSubmitStatus('error');
+            }
         } catch (error) {
+            console.error('Error sending email:', error);
             setSubmitStatus('error');
         }
         setIsSubmitting(false);
