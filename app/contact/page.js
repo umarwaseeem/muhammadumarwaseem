@@ -1,19 +1,15 @@
-
-
-
-
+import ContactForm from '../components/ContactForm';
 import ContactList from '../components/contactlist';
 import { umarAvatar } from '../images';
 
-
-
 export default function Contact() {
-
-
     return (
-        <section className="flex min-h-screen flex-col items-start lg:justify-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
+        <section className="flex min-h-screen flex-col items-start lg:items-start bg-midnightblue p-4 lg:px-16 lg:pb-16">
             <h2 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-white mb-14 pt-20">get in touch</h2>
-            <ContactList />
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <ContactForm />
+                <ContactList />
+            </div>
         </section>
     );
 }
