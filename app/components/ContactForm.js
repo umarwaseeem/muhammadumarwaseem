@@ -24,7 +24,7 @@ export default function ContactForm() {
         
         try {
             const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-            const response = await fetch(`http://localhost:3000/api/sendEmail`, {
+            const response = await fetch(`${BASE_URL}/api/sendEmail`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
