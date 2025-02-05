@@ -22,7 +22,7 @@ export async function generateMetadata() {
         openGraph: {
             title: "Resume | Muhammad Umar Waseem",
             description: "Professional resume of Muhammad Umar Waseem.",
-            url: "https://muhammadumarwaseem.com/blogs",
+            url: "https://muhammadumarwaseem.com/resume",
             images: umarAvatar,
         },
     };
