@@ -12,27 +12,45 @@ export async function POST(req) {
 
         // Create a transporter object using SMTP transport
         const transporter = nodemailer.createTransport({
-            service: 'gmail', // e.g., 'gmail'
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // Use TLS
             auth: {
                 user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                pass: process.env.EMAIL_PASS, 
             },
         });
 
         // Set up email data
         const mailOptions = {
-            from: email,
-            to: process.env.EMAIL_USER, // recipient email
-            subject: `New message from ${name}`,
-            text: `Occupation: ${occupation}\n\nMessage:\n${message}`,
+            from: `"Contact Form" <${process.env.EMAIL_USER}>`, // Use your email as sender
+            replyTo: email, // Set reply-to as the form submitter's email
+            to: process.env.EMAIL_USER,
+            subject: `New Contact Form Message from ${name}`,
+            text: `
+Name: ${name}
+Email: ${email}
+Occupation: ${occupation}
+
+Message:
+${message}
+            `,
+            html: `
+<h2>New Contact Form Submission</h2>
+<p><strong>Name:</strong> ${name}</p>
+<p><strong>Email:</strong> ${email}</p>
+<p><strong>Occupation:</strong> ${occupation}</p>
+<p><strong>Message:</strong></p>
+<p>${message}</p>
+            `
         };
 
-        // Send mail with defined transport object
+        // Send mail
         await transporter.sendMail(mailOptions);
 
         return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
     } catch (error) {
         console.error("Error sending email:", error);
-        return NextResponse.json({ message: "Error sending email" }, { status: 500 });
+        return NextResponse.json({ message: error.message }, { status: 500 });
     }
 } 
