@@ -26,7 +26,7 @@ export async function POST(req) {
             from: `"Contact Form" <${process.env.EMAIL_USER}>`, // Use your email as sender
             replyTo: email, // Set reply-to as the form submitter's email
             to: process.env.EMAIL_USER,
-            subject: `New Contact Form Message from ${name}`,
+            subject: `Contact Form Message from ${name}`,
             text: `
 Name: ${name}
 Email: ${email}
@@ -36,7 +36,7 @@ Message:
 ${message}
             `,
             html: `
-<h2>New Contact Form Submission</h2>
+<h2>Contact Form Message</h2>
 <p><strong>Name:</strong> ${name}</p>
 <p><strong>Email:</strong> ${email}</p>
 <p><strong>Occupation:</strong> ${occupation}</p>
